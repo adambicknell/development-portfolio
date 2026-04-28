@@ -15,7 +15,7 @@ export function SkillsPageClient() {
     <section className="section">
       <div className="container">
         <div className="space-between">
-          <div>
+          <div className="animate-fade-in-left">
             <span className="eyebrow">Technical range</span>
             <h1 className="h1">Skills</h1>
             <p className="lead">
@@ -26,7 +26,7 @@ export function SkillsPageClient() {
             </p>
           </div>
 
-          <div className="card">
+          <div className="card animate-fade-in-right">
             <strong>Core focus</strong>
             <p className="muted">
               React, TypeScript, Python, APIs, cloud delivery, and practical
@@ -41,7 +41,7 @@ export function SkillsPageClient() {
 
         <p className="muted">Showing {filteredGroups.length} of {skillGroups.length} skill groups.</p>
 
-        <div className="grid">
+        <div className="grid animate-grid-single">
           {filteredGroups.map((group) => (
             <section className="card" id={group.slug} key={group.slug}>
               <SectionHeader title={group.title}>{group.summary}</SectionHeader>

@@ -15,7 +15,7 @@ export function DemoProjectsPageClient() {
     <section className="section">
       <div className="container">
         <div className="space-between">
-          <div>
+          <div className="animate-fade-in-left">
             <span className="eyebrow">Public proof</span>
             <h1 className="h1">Demo projects</h1>
             <p className="lead">
@@ -24,7 +24,7 @@ export function DemoProjectsPageClient() {
               databases, testing, deployment, and business workflows.
             </p>
           </div>
-          <div className="card">
+          <div className="card animate-fade-in-right">
             <strong>What these prove</strong>
             <p className="muted">
               Public repos, live demos, React and TypeScript, API design, auth,
@@ -45,7 +45,7 @@ export function DemoProjectsPageClient() {
 
           <p className="muted">Showing {filteredProjects.length} of {projects.length} demo projects.</p>
 
-          <div className="grid grid-3">
+          <div className="grid grid-3 animate-grid-3">
             {filteredProjects.map((item) => (
               <ProjectCard key={item.slug} item={item} />
             ))}

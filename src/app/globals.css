@@ -40,7 +40,7 @@ button { cursor: pointer; }
 .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.card { background: color-mix(in srgb, var(--surface) 94%, transparent); border: 1px solid var(--border); border-radius: 22px; box-shadow: var(--shadow); padding: 24px; }
+.card { background: color-mix(in srgb, var(--surface) 94%, transparent); border: 1px solid var(--border); border-radius: 22px; box-shadow: var(--shadow); padding: 24px; animation-name: fadeInUp; animation-duration: .7s; animation-fill-mode: both; }
 .card-soft { background: var(--soft); border: 1px solid var(--border); border-radius: 18px; padding: 18px; }
 .eyebrow { color: var(--primary); font-size: .82rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 .h1 { font-size: clamp(2.2rem, 5vw, 4.8rem); line-height: .98; letter-spacing: -.06em; margin: 14px 0 20px; }
@@ -83,31 +83,43 @@ button { cursor: pointer; }
 .skip-link { position: absolute; top: -100px; left: 12px; background: var(--primary); color: var(--primaryInk); padding: 10px 14px; border-radius: 10px; z-index: 100; }
 .skip-link:focus { top: 12px; }
 
-main .hero-grid > :first-child { animation-name: fadeInLeft; animation-duration: .75s; animation-fill-mode: both; }
-main .hero-grid > :last-child { animation-name: fadeInRight; animation-duration: .75s; animation-fill-mode: both; }
-main .grid-2 > :nth-child(odd) { animation-name: fadeInLeft; animation-duration: .7s; animation-fill-mode: both; }
-main .grid-2 > :nth-child(even) { animation-name: fadeInRight; animation-duration: .7s; animation-fill-mode: both; }
-main .grid-3 > :nth-child(3n+1),
-main .grid-4 > :nth-child(4n+1) { animation-name: fadeInLeft; animation-duration: .7s; animation-fill-mode: both; }
-main .grid-3 > :nth-child(3n),
-main .grid-4 > :nth-child(4n) { animation-name: fadeInRight; animation-duration: .7s; animation-fill-mode: both; }
-main .grid-3 > :nth-child(3n+2),
-main .grid-4 > :nth-child(4n+2),
-main .grid-4 > :nth-child(4n+3) { animation-name: fadeInUp; animation-duration: .7s; animation-fill-mode: both; }
+.animate-fade-in-left { animation-name: fadeInLeft; animation-duration: .75s; animation-fill-mode: both; }
+.animate-fade-in-right { animation-name: fadeInRight; animation-duration: .75s; animation-fill-mode: both; }
+.animate-fade-in-up { animation-name: fadeInUp; animation-duration: .7s; animation-fill-mode: both; }
+
+.animate-grid-2 > :nth-child(odd) { animation-name: fadeInLeft; animation-duration: .7s; animation-fill-mode: both; }
+.animate-grid-2 > :nth-child(even) { animation-name: fadeInRight; animation-duration: .7s; animation-fill-mode: both; }
+.animate-grid-3 > :nth-child(3n+1),
+.animate-grid-4 > :nth-child(4n+1) { animation-name: fadeInLeft; animation-duration: .7s; animation-fill-mode: both; }
+.animate-grid-3 > :nth-child(3n),
+.animate-grid-4 > :nth-child(4n) { animation-name: fadeInRight; animation-duration: .7s; animation-fill-mode: both; }
+.animate-grid-3 > :nth-child(3n+2),
+.animate-grid-4 > :nth-child(4n+2),
+.animate-grid-4 > :nth-child(4n+3) { animation-name: fadeInUp; animation-duration: .7s; animation-fill-mode: both; }
+.animate-grid-single > :nth-child(odd) { animation-name: fadeInLeft; animation-duration: .7s; animation-fill-mode: both; }
+.animate-grid-single > :nth-child(even) { animation-name: fadeInRight; animation-duration: .7s; animation-fill-mode: both; }
 
 @media (prefers-reduced-motion: reduce) {
-  main .hero-grid > *,
-  main .grid-2 > *,
-  main .grid-3 > *,
-  main .grid-4 > * {
+  .card,
+  .animate-fade-in-left,
+  .animate-fade-in-right,
+  .animate-fade-in-up,
+  .animate-grid-2 > *,
+  .animate-grid-3 > *,
+  .animate-grid-4 > *,
+  .animate-grid-single > * {
     animation: none !important;
   }
 }
 
-html[data-reduced-motion="true"] main .hero-grid > *,
-html[data-reduced-motion="true"] main .grid-2 > *,
-html[data-reduced-motion="true"] main .grid-3 > *,
-html[data-reduced-motion="true"] main .grid-4 > * {
+html[data-reduced-motion="true"] .animate-fade-in-left,
+html[data-reduced-motion="true"] .animate-fade-in-right,
+html[data-reduced-motion="true"] .animate-fade-in-up,
+html[data-reduced-motion="true"] .animate-grid-2 > *,
+html[data-reduced-motion="true"] .animate-grid-3 > *,
+html[data-reduced-motion="true"] .animate-grid-4 > *,
+html[data-reduced-motion="true"] .animate-grid-single > *,
+html[data-reduced-motion="true"] .card {
   animation: none !important;
 }
 

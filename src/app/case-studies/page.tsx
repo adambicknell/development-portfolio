@@ -34,7 +34,7 @@ export default function CaseStudiesPage() {
     <section className="section">
       <div className="container">
         <div className="space-between">
-          <div>
+          <div className="animate-fade-in-left">
             <span className="eyebrow">Commercial proof</span>
             <h1 className="h1">Case studies</h1>
             <p className="lead">
@@ -43,7 +43,7 @@ export default function CaseStudiesPage() {
               support.
             </p>
           </div>
-          <div className="card">
+          <div className="card animate-fade-in-right">
             <strong>What these show</strong>
             <p className="muted">
               Secure access, internal tools, SaaS, cloud, authentication, React,
@@ -62,7 +62,7 @@ export default function CaseStudiesPage() {
           {caseStudyViewMode}
         </p>
 
-        <div className={caseStudyViewMode === 'cards' ? 'grid grid-2' : 'grid'}>
+        <div className={caseStudyViewMode === 'cards' ? 'grid grid-2 animate-grid-2' : 'grid animate-grid-single'}>
           {filtered.map((item) => (
             <CaseStudyCard key={item.slug} item={item} />
           ))}

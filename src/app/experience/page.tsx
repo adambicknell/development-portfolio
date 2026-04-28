@@ -1,7 +1,72 @@
 import Link from 'next/link';
 import { experience, earlierRoles } from '@/data/experience';
 import { TagList } from '@/components/cards/TagList';
+
 export const metadata = { title: 'Experience' };
+
 export default function ExperiencePage() {
-  return <section className="section"><div className="container"><div className="space-between"><div><span className="eyebrow">Commercial experience</span><h1 className="h1">Experience</h1><p className="lead">I have worked across full stack product development, internal tools, SaaS platforms, secure client systems, modelling platforms, cloud infrastructure, databases, authentication, and production support.</p></div><div className="card"><strong>Experience snapshot</strong><p className="muted">React, Python, SaaS, internal systems, secure access, cloud, CI/CD, databases, auth, and production support.</p></div></div><div className="grid" style={{ marginTop: 32 }}>{experience.map(item => <article className="card" key={item.company + item.role}><span className="eyebrow">{item.dates}</span><h2>{item.company}</h2><h3>{item.role}</h3><p className="muted">{item.summary}</p><ul>{item.keyWork.map(work => <li key={work}>{work}</li>)}</ul><TagList tags={item.tags} />{item.related && <p><Link className="button" href="/case-studies">Related: {item.related}</Link></p>}</article>)}</div><section className="section-tight"><h2 className="h2">Earlier full stack and systems roles</h2><p className="lead">Earlier roles gave me a broad base across web development, support, business systems, infrastructure, and older codebases.</p><div className="row">{earlierRoles.map(role => <span className="tag" key={role}>{role}</span>)}</div></section></div></section>;
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="space-between">
+          <div className="animate-fade-in-left">
+            <span className="eyebrow">Commercial experience</span>
+            <h1 className="h1">Experience</h1>
+            <p className="lead">
+              I have worked across full stack product development, internal tools,
+              SaaS platforms, secure client systems, modelling platforms, cloud
+              infrastructure, databases, authentication, and production support.
+            </p>
+          </div>
+
+          <div className="card animate-fade-in-right">
+            <strong>Experience snapshot</strong>
+            <p className="muted">
+              React, Python, SaaS, internal systems, secure access, cloud, CI/CD,
+              databases, auth, and production support.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid animate-grid-single" style={{ marginTop: 32 }}>
+          {experience.map((item) => (
+            <article className="card" key={item.company + item.role}>
+              <span className="eyebrow">{item.dates}</span>
+              <h2>{item.company}</h2>
+              <h3>{item.role}</h3>
+              <p className="muted">{item.summary}</p>
+              <ul>
+                {item.keyWork.map((work) => (
+                  <li key={work}>{work}</li>
+                ))}
+              </ul>
+              <TagList tags={item.tags} />
+              {item.related && (
+                <p>
+                  <Link className="button" href="/case-studies">
+                    Related: {item.related}
+                  </Link>
+                </p>
+              )}
+            </article>
+          ))}
+        </div>
+
+        <section className="section-tight">
+          <h2 className="h2">Earlier full stack and systems roles</h2>
+          <p className="lead">
+            Earlier roles gave me a broad base across web development, support,
+            business systems, infrastructure, and older codebases.
+          </p>
+          <div className="row">
+            {earlierRoles.map((role) => (
+              <span className="tag" key={role}>
+                {role}
+              </span>
+            ))}
+          </div>
+        </section>
+      </div>
+    </section>
+  );
 }
