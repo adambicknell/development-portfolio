@@ -3,7 +3,6 @@ import './globals.css';
 import { Providers } from '@/store/Providers';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { CommandPalette } from '@/components/command-palette/CommandPalette';
 import { site } from '@/data/site';
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -12,5 +11,5 @@ export const metadata: Metadata = {
   openGraph: { title: site.name + ' | ' + site.role, description: site.description, url: site.url, siteName: site.name, locale: 'en_GB', type: 'website' }
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en-GB" suppressHydrationWarning><body><Providers><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main">{children}</main><Footer /><CommandPalette /></Providers></body></html>;
+  return <html lang="en-GB" suppressHydrationWarning><body><Providers><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main">{children}</main><Footer /></Providers></body></html>;
 }

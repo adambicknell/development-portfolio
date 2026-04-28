@@ -2,12 +2,10 @@
 import Link from "next/link";
 import { navItems, site } from "@/data/site";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import {
-  setMobileMenuOpen,
-  toggleCommandPalette,
-} from "@/store/slices/uiSlice";
+import { setMobileMenuOpen } from "@/store/slices/uiSlice";
 import { ThemeToggle } from "@/components/preferences/ThemeToggle";
 import { PreferencesPanel } from "@/components/preferences/PreferencesPanel";
+import { navIconMap } from "@/data/navIcons";
 
 export function Header() {
   const dispatch = useAppDispatch();
@@ -30,24 +28,21 @@ export function Header() {
         </Link>
         <nav className="nav" aria-label="Main navigation">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>
-              {item.label}
+            <Link key={item.href} href={item.href} className="nav-icon-link">
+              {navIconMap[item.label] && <span aria-hidden="true">{navIconMap[item.label]}</span>}
+              <span>{item.label}</span>
             </Link>
           ))}
         </nav>
         <div className="row no-print">
           <ThemeToggle />
           <button
-            className="button"
-            onClick={() => dispatch(toggleCommandPalette())}
-          >
-            Cmd K
-          </button>
-          <button
-            className="button mobile-menu-button"
+            className="button mobile-menu-button icon-button"
             onClick={() => dispatch(setMobileMenuOpen(!open))}
+            aria-label={open ? "Close menu" : "Open menu"}
+            title={open ? "Close menu" : "Open menu"}
           >
-            Menu
+            <span aria-hidden="true">{open ? "✕" : "☰"}</span>
           </button>
         </div>
       </div>
@@ -58,16 +53,12 @@ export function Header() {
               key={item.href}
               href={item.href}
               onClick={() => dispatch(setMobileMenuOpen(false))}
+              className="nav-icon-link"
             >
-              {item.label}
+              {navIconMap[item.label] && <span aria-hidden="true">{navIconMap[item.label]}</span>}
+              <span>{item.label}</span>
             </Link>
           ))}
-          <button
-            className="button"
-            onClick={() => dispatch(toggleCommandPalette())}
-          >
-            Open command palette
-          </button>
         </div>
       )}
       <PreferencesPanel />

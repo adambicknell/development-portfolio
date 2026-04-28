@@ -4,5 +4,17 @@ import { setPreferencesOpen } from '@/store/slices/uiSlice';
 export function ThemeToggle() {
   const dispatch = useAppDispatch();
   const theme = useAppSelector(state => state.preferences.theme);
-  return <button className="button ghost" onClick={() => dispatch(setPreferencesOpen(true))} aria-label="Open preferences">{theme === 'dark' ? 'Dark' : theme === 'light' ? 'Light' : 'System'}</button>;
+  const isLight = theme === 'light';
+  const icon = isLight ? '💡' : theme === 'dark' ? '🌙' : '🌓';
+  const label = `Open preferences (current theme: ${theme})`;
+  return (
+    <button
+      className="button ghost icon-button"
+      onClick={() => dispatch(setPreferencesOpen(true))}
+      aria-label={label}
+      title={label}
+    >
+      <span aria-hidden="true">{icon}</span>
+    </button>
+  );
 }

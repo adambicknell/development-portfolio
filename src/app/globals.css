@@ -63,10 +63,13 @@ button { cursor: pointer; }
 .nav { display: flex; gap: 16px; align-items: center; }
 .nav a { color: var(--muted); font-weight: 700; font-size: .9rem; }
 .nav a:hover { color: var(--text); }
+.nav-icon-link { display: inline-flex; align-items: center; gap: 6px; }
 .mobile-menu-button { display: none; }
 .mobile-panel { display: none; }
+.icon-button { min-width: 42px; padding: 0 12px; }
 .footer { background: #061022; color: #edf4ff; padding: 42px 0; margin-top: 64px; }
 .footer a, .footer .muted { color: #bac8dc; }
+.footer-icon-link { display: inline-flex; align-items: center; gap: 8px; }
 .hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 32px; align-items: start; }
 .sticky { position: sticky; top: 96px; }
 .preview-panel { min-height: 190px; border-radius: 18px; border: 1px solid var(--border); background: linear-gradient(135deg, var(--soft), var(--surface)); padding: 18px; }
