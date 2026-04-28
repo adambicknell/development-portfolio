@@ -25,17 +25,6 @@ export default function HomePage() {
                 this portfolio uses anonymised case studies and selected public
                 demos to show how I approach real systems.
               </p>
-              <div className="row" style={{ marginTop: 26 }}>
-                <Link className="button primary" href="/case-studies">
-                  View case studies
-                </Link>
-                <Link className="button" href="/demo-projects">
-                  View demo projects
-                </Link>
-                <a className="button ghost" href={site.github}>
-                  Open GitHub
-                </a>
-              </div>
             </div>
             <div className="animate-fade-in-up">
               <div className="photo-cutout photo-cutout-tall">
@@ -75,10 +64,19 @@ export default function HomePage() {
               </div>
             </aside>
           </div>
+          <div className="row" style={{ marginTop: 26 }}>
+            <Link className="button primary" href="/case-studies">
+              View case studies
+            </Link>
+            <Link className="button" href="/demo-projects">
+              View demo projects
+            </Link>
+            <a className="button ghost" href={site.github}>
+              Open GitHub
+            </a>
+          </div>
         </div>
       </section>
-
-      <HomeProofSections />
     </>
   );
 }

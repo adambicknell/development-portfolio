@@ -18,8 +18,8 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="photo-cutout photo-cutout-wide">
-            <div className="photo-frame photo-frame-wide photo-frame-curved animate-fade-in-right">
+          <div className="photo-cutout photo-cutout-wide animate-fade-in-right">
+            <div className="photo-frame photo-frame-wide photo-frame-curved">
               <Image
                 src="/adam3.jpg"
                 alt="Portrait style contact photo of Adam"
