@@ -10,6 +10,7 @@ export type DemoProject = {
   decisions: string[];
   improvements: string[];
   tags: string[];
+  focusAreas: string[];
   repoUrl?: string;
   liveUrl?: string;
   relatedCaseStudy?: string;
@@ -28,6 +29,7 @@ export const projects: DemoProject[] = [
     decisions: ['Keep permissions explicit','Use seed data','Design for support','Keep the demo realistic but focused'],
     improvements: ['Virus scanning for uploads','Email notifications','Document expiry rules','Stronger observability'],
     tags: ['Full stack','Auth','Documents','Database','Testing'],
+    focusAreas: ['Full stack','Security/auth','Data','React'],
     relatedCaseStudy: 'secure-client-document-portal',
     diagram: ['User','React UI','Protected routes','API layer','Database','File storage']
   },
@@ -42,6 +44,7 @@ export const projects: DemoProject[] = [
     decisions: ['Keep AI suggestions human approved','Make workflow states explicit','Track actions for supportability'],
     improvements: ['Notification rules','Team assignment analytics','SLA reporting','More granular permissions'],
     tags: ['Internal tools','Workflow','Dashboard','AI assisted','Auth'],
+    focusAreas: ['Internal tools','Full stack','React','Security/auth'],
     diagram: ['User','Issue intake','Triage rules','Admin dashboard','Status workflow','Metrics']
   },
   {
@@ -55,6 +58,7 @@ export const projects: DemoProject[] = [
     decisions: ['Do not use a database for static content','Use Redux for real UI state','Make the portfolio itself a small product'],
     improvements: ['Generated Open Graph images','Expanded test coverage','More polished screenshot assets'],
     tags: ['Frontend','Next.js','Redux','SEO','Accessibility'],
+    focusAreas: ['React','Full stack','SaaS'],
     diagram: ['Visitor','Next.js app','Redux preferences','Structured content','SEO metadata','GitHub repo']
   }
 ];
