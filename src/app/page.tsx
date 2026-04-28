@@ -65,13 +65,13 @@ export default function HomePage() {
             </aside>
           </div>
           <div className="row" style={{ marginTop: 26 }}>
-            <Link className="button primary" href="/case-studies">
+            <Link className="button" href="/case-studies">
               View case studies
             </Link>
             <Link className="button" href="/demo-projects">
               View demo projects
             </Link>
-            <a className="button ghost" href={site.github}>
+            <a className="button" href={site.github}>
               Open GitHub
             </a>
           </div>
