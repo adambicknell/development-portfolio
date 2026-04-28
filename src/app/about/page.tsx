@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
-export const metadata = { title: "About Adam" };
+export const metadata = { title: 'About Adam' };
 
 export default function Page() {
   return (
@@ -18,13 +18,12 @@ export default function Page() {
               applications.
             </p>
           </div>
-
-          <div className="photo-frame photo-frame-feature photo-frame-feature-top">
+          <div className="photo-frame photo-frame-wide photo-frame-curved animate-fade-in-right">
             <Image
-              src="/adam1.jpg"
-              alt="Portrait photo of Adam"
+              src="/adam.jpg"
+              alt="Portrait of Adam"
               fill
-              sizes="(max-width: 600px) 50vw, 600px"
+              sizes="(max-width: 900px) 100vw, 620px"
               className="photo-frame-image"
             />
           </div>
@@ -42,9 +41,9 @@ export default function Page() {
           <div className="card">
             <h2>Why case studies</h2>
             <p className="muted">
-              Most of my best work is private, internal, client-facing, or under
-              NDA, so the portfolio explains the problem, decisions, system
-              shape, and outcome.
+              Most of my best work is private, internal, client-facing, or
+              under NDA, so the portfolio explains the problem, decisions,
+              system shape, and outcome.
             </p>
           </div>
           <div className="card">

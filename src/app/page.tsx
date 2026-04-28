@@ -10,20 +10,8 @@ export default function HomePage() {
       <JsonLd data={personSchema} />
       <section className="section">
         <div className="container">
-          <div className="space-between">
-            <div
-              className="animate-fade-in-left hero-left-stack"
-              style={{ maxWidth: 760 }}
-            >
-              <div className="photo-frame photo-frame-feature photo-frame-feature-top">
-                <Image
-                  src="/adam1.jpg"
-                  alt="Portrait photo of Adam"
-                  fill
-                  sizes="(max-width: 420px) 100vw, 420px"
-                  className="photo-frame-image"
-                />
-              </div>
+          <div className="hero-home-layout">
+            <div className="animate-fade-in-left hero-left-stack">
               <span className="eyebrow">{site.role}</span>
               <h1 className="h1">Full Stack React Developer</h1>
               <p className="lead">
@@ -47,6 +35,17 @@ export default function HomePage() {
                 <a className="button ghost" href={site.github}>
                   Open GitHub
                 </a>
+              </div>
+            </div>
+            <div className="animate-fade-in-up">
+              <div className="photo-frame photo-frame-tall photo-frame-curved">
+                <Image
+                  src="/adam1.jpg"
+                  alt="Portrait photo of Adam"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 320px"
+                  className="photo-frame-image"
+                />
               </div>
             </div>
             <aside className="animate-fade-in-right">
