@@ -38,14 +38,16 @@ export default function HomePage() {
               </div>
             </div>
             <div className="animate-fade-in-up">
-              <div className="photo-frame photo-frame-tall photo-frame-curved">
-                <Image
-                  src="/adam1.jpg"
-                  alt="Portrait photo of Adam"
-                  fill
-                  sizes="(max-width: 900px) 100vw, 320px"
-                  className="photo-frame-image"
-                />
+              <div className="photo-cutout photo-cutout-tall">
+                <div className="photo-frame photo-frame-tall photo-frame-curved">
+                  <Image
+                    src="/adam1.jpg"
+                    alt="Portrait photo of Adam"
+                    fill
+                    sizes="(max-width: 900px) 100vw, 320px"
+                    className="photo-frame-image"
+                  />
+                </div>
               </div>
             </div>
             <aside className="animate-fade-in-right">

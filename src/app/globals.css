@@ -290,7 +290,10 @@ button {
 }
 .hero-home-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(240px, 320px) minmax(0, 0.95fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(240px, 320px) minmax(
+      0,
+      0.95fr
+    );
   gap: 28px;
   align-items: start;
 }
@@ -298,55 +301,107 @@ button {
   display: grid;
   gap: 22px;
 }
-.photo-frame {
+
+.photo-cutout {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
-  border: 1px solid var(--border);
+  overflow: visible;
+  width: 320px;
+  aspect-ratio: 0.72;
+  padding: 18px;
+  border-radius: 999px;
+  background: var(--background);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.42),
-    inset 0 0 0 1px color-mix(in srgb, var(--border) 72%, transparent),
-    var(--shadow);
-  background: color-mix(in srgb, var(--surface) 88%, transparent);
+    inset 0 2px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -2px 0 rgba(15, 23, 42, 0.08),
+    inset 0 22px 34px rgba(15, 23, 42, 0.2),
+    inset 0 -12px 22px rgba(255, 255, 255, 0.55),
+    0 24px 70px rgba(15, 23, 42, 0.12);
 }
-.photo-frame::before {
+
+.photo-cutout::before {
   content: "";
   position: absolute;
-  inset: 12px -12px -12px 12px;
-  border: 1px solid color-mix(in srgb, var(--primary) 32%, var(--border));
+  inset: 12px;
+  z-index: 2;
+  pointer-events: none;
   border-radius: inherit;
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--primary) 16%, transparent),
-    transparent
-  );
-  z-index: -1;
+  box-shadow:
+    inset 0 24px 32px rgba(15, 23, 42, 0.38),
+    inset 0 -14px 24px rgba(255, 255, 255, 0.35),
+    inset 20px 0 26px rgba(15, 23, 42, 0.18),
+    inset -20px 0 26px rgba(15, 23, 42, 0.14);
 }
+
+.photo-frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--background);
+  transform: translateY(5px) scale(0.985);
+}
+
+.photo-frame img,
 .photo-frame-image {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
-.photo-frame-tall {
+
+.photo-cutout-tall {
   width: min(100%, 360px);
   aspect-ratio: 3 / 4.4;
-  border-radius: 34px 22px 42px 24px;
+  border-radius: 44% 56% 40% 60% / 58% 36% 64% 42%;
 }
-.photo-frame-wide {
+
+.photo-cutout-wide {
   width: min(100%, 620px);
   aspect-ratio: 16 / 9;
+  border-radius: 44% 56% 40% 60% / 58% 36% 64% 42%;
+}
+
+.photo-frame-tall {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 34px 22px 42px 24px;
+}
+
+.photo-frame-wide {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
   border-radius: 24px 40px 20px 36px;
 }
+
 .photo-frame-curved {
   border-radius: 44% 56% 40% 60% / 58% 36% 64% 42%;
 }
+
+.photo-cutout-tall,
+.photo-cutout-wide {
+  border-radius: 44% 56% 40% 60% / 58% 36% 64% 42%;
+}
+
+.photo-cutout-tall::before,
+.photo-cutout-wide::before {
+  border-radius: 44% 56% 40% 60% / 58% 36% 64% 42%;
+}
+
 .photo-frame-feature {
   width: min(100%, 420px);
   aspect-ratio: 5 / 4;
   border-radius: 38px 14px 42px 22px;
 }
+
 .photo-frame-feature-top {
   width: min(100%, 760px);
   aspect-ratio: 21 / 9;
 }
+
 .sticky {
   position: sticky;
   top: 96px;

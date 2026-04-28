@@ -17,14 +17,17 @@ export default function Page() {
               email or connect with me through LinkedIn and GitHub.
             </p>
           </div>
-          <div className="photo-frame photo-frame-wide photo-frame-curved animate-fade-in-right">
-            <Image
-              src="/adam3.jpg"
-              alt="Portrait style contact photo of Adam"
-              fill
-              sizes="(max-width: 900px) 100vw, 620px"
-              className="photo-frame-image"
-            />
+
+          <div className="photo-cutout photo-cutout-wide">
+            <div className="photo-frame photo-frame-wide photo-frame-curved animate-fade-in-right">
+              <Image
+                src="/adam3.jpg"
+                alt="Portrait style contact photo of Adam"
+                fill
+                sizes="(max-width: 900px) 100vw, 620px"
+                className="photo-frame-image"
+              />
+            </div>
           </div>
         </div>
 
