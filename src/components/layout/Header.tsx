@@ -12,7 +12,19 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link href="/" className="logo">{site.name}<span>{site.role}</span></Link>
+        <Link href="/" className="logo">
+          <img
+            className="logo-avatar"
+            src="/profile.jpg"
+            alt="Adam Bicknell profile photo"
+            width={44}
+            height={44}
+          />
+          <span>
+            {site.name}
+            <span>{site.role}</span>
+          </span>
+        </Link>
         <nav className="nav" aria-label="Main navigation">
           {navItems.map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}
         </nav>
