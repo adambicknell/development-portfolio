@@ -166,6 +166,10 @@ button {
   background: var(--surface);
   color: var(--text);
   font-weight: 700;
+  transition:
+    background-color 0.45s ease,
+    border-color 0.45s ease,
+    color 0.45s ease;
 }
 .button.primary {
   background: var(--primary);
@@ -174,6 +178,17 @@ button {
 }
 .button.ghost {
   background: transparent;
+}
+.button:hover {
+  background: color-mix(in srgb, var(--primary) 10%, var(--surface));
+  border-color: color-mix(in srgb, var(--primary) 30%, var(--button-border));
+}
+.button.primary:hover {
+  background: color-mix(in srgb, var(--primary) 84%, white);
+  border-color: color-mix(in srgb, var(--primary) 84%, white);
+}
+.button.ghost:hover {
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
 }
 .tag {
   display: inline-flex;
