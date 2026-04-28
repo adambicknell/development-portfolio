@@ -1,3 +1,5 @@
+@import 'animate.css';
+
 :root {
   --bg: #f6f8fb;
   --surface: #ffffff;
@@ -80,6 +82,35 @@ button { cursor: pointer; }
 .modal { width: min(880px, calc(100% - 32px)); max-height: 80vh; overflow: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; box-shadow: 0 40px 90px rgba(0,0,0,.35); padding: 20px; }
 .skip-link { position: absolute; top: -100px; left: 12px; background: var(--primary); color: var(--primaryInk); padding: 10px 14px; border-radius: 10px; z-index: 100; }
 .skip-link:focus { top: 12px; }
+
+main .hero-grid > :first-child { animation-name: fadeInLeft; animation-duration: .75s; animation-fill-mode: both; }
+main .hero-grid > :last-child { animation-name: fadeInRight; animation-duration: .75s; animation-fill-mode: both; }
+main .grid-2 > :nth-child(odd) { animation-name: fadeInLeft; animation-duration: .7s; animation-fill-mode: both; }
+main .grid-2 > :nth-child(even) { animation-name: fadeInRight; animation-duration: .7s; animation-fill-mode: both; }
+main .grid-3 > :nth-child(3n+1),
+main .grid-4 > :nth-child(4n+1) { animation-name: fadeInLeft; animation-duration: .7s; animation-fill-mode: both; }
+main .grid-3 > :nth-child(3n),
+main .grid-4 > :nth-child(4n) { animation-name: fadeInRight; animation-duration: .7s; animation-fill-mode: both; }
+main .grid-3 > :nth-child(3n+2),
+main .grid-4 > :nth-child(4n+2),
+main .grid-4 > :nth-child(4n+3) { animation-name: fadeInUp; animation-duration: .7s; animation-fill-mode: both; }
+
+@media (prefers-reduced-motion: reduce) {
+  main .hero-grid > *,
+  main .grid-2 > *,
+  main .grid-3 > *,
+  main .grid-4 > * {
+    animation: none !important;
+  }
+}
+
+html[data-reduced-motion="true"] main .hero-grid > *,
+html[data-reduced-motion="true"] main .grid-2 > *,
+html[data-reduced-motion="true"] main .grid-3 > *,
+html[data-reduced-motion="true"] main .grid-4 > * {
+  animation: none !important;
+}
+
 @media(max-width:900px) {
   .grid-2,.grid-3,.grid-4,.hero-grid { grid-template-columns: 1fr; }
   .nav { display: none; }

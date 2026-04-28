@@ -14,6 +14,11 @@ export function persistPreferences(state: PreferencesState) {
   if (typeof window === 'undefined') return;
   window.localStorage.setItem(storageKey, JSON.stringify(state));
 }
+export function applyReducedMotionPreference(reducedMotion: boolean) {
+  if (typeof window === 'undefined') return;
+  const systemReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.dataset.reducedMotion = reducedMotion || systemReducedMotion ? 'true' : 'false';
+}
 const slice = createSlice({
   name: 'preferences',
   initialState,
