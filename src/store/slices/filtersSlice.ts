@@ -10,8 +10,9 @@ const slice = createSlice({
     toggleTag: (state, action: PayloadAction<string>) => {
       state.activeTags = state.activeTags.includes(action.payload) ? state.activeTags.filter(tag => tag !== action.payload) : [...state.activeTags, action.payload];
     },
+    clearCaseStudyTagFilters: (state) => { state.activeTags = []; },
     clearFilters: (state) => { state.caseStudySearch = ''; state.projectSearch = ''; state.activeTags = []; }
   }
 });
-export const { setCaseStudySearch, setProjectSearch, toggleTag, clearFilters } = slice.actions;
+export const { setCaseStudySearch, setProjectSearch, toggleTag, clearCaseStudyTagFilters, clearFilters } = slice.actions;
 export default slice.reducer;
