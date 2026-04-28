@@ -10,7 +10,7 @@ export function FocusSelector({ compact = false }: { compact?: boolean }) {
       {!compact && (
         <>
           <span className="eyebrow">View portfolio by focus</span>
-          <h2 className="h3">What are you looking for?</h2>
+          <h2 className="h3">Which focus do you want to view?</h2>
           <p className="muted">
             Choose an area and the site highlights related proof.
           </p>

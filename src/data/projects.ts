@@ -53,7 +53,7 @@ export const projects: DemoProject[] = [
     status: 'In development',
     summary: 'A public Next.js portfolio built as a small frontend product using TypeScript, Redux Toolkit, persisted preferences, structured content, filtering, search, compare mode, command palette navigation, accessibility, SEO, and schema.',
     problem: 'The portfolio needs to present private commercial experience clearly while also proving current frontend quality through inspectable public code.',
-    features: ['Next.js routing','Redux Toolkit state','Persisted preferences','Hiring focus selector','Case study filters','Command palette','Search','Compare mode','SEO and schema'],
+    features: ['Next.js routing','Redux Toolkit state','Persisted preferences','Portfolio focus selector','Case study filters','Command palette','Search','Compare mode','SEO and schema'],
     techStack: ['Next.js','React','TypeScript','Redux Toolkit','Structured content','Testing'],
     decisions: ['Do not use a database for static content','Use Redux for real UI state','Make the portfolio itself a small product'],
     improvements: ['Generated Open Graph images','Expanded test coverage','More polished screenshot assets'],

@@ -18,10 +18,11 @@ export default function Page() {
               applications.
             </p>
           </div>
+
           <div className="photo-cutout photo-cutout-wide">
             <div className="photo-frame photo-frame-wide photo-frame-curved animate-fade-in-right">
               <Image
-                src="/adam.jpg"
+                src="/adam2.jpg"
                 alt="Portrait of Adam"
                 fill
                 sizes="(max-width: 900px) 100vw, 620px"

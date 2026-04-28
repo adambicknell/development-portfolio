@@ -71,7 +71,7 @@ export default function CaseStudiesPage() {
         {filtered.length === 0 && (
           <div className="card">
             <h2>No case studies match those filters.</h2>
-            <p className="muted">Try removing one filter or switching the hiring focus.</p>
+            <p className="muted">Try removing one filter or switching the portfolio focus.</p>
           </div>
         )}
       </div>

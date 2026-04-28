@@ -12,9 +12,9 @@ export default function Page() {
             <span className="eyebrow">Contact</span>
             <h1 className="h1">Contact</h1>
             <p className="lead">
-              For professional enquiries, project discussions, technical
-              conversations, or collaboration, you can contact me directly by
-              email or connect with me through LinkedIn and GitHub.
+              If you want to connect about portfolio content or technical
+              topics, you can contact me directly by email or through LinkedIn
+              and GitHub.
             </p>
           </div>
 
