@@ -5,9 +5,9 @@ import { navIconMap } from '@/data/navIcons';
 const socialIconMap: Record<string, string> = {
   Email: '✉️',
   GitHub: '🐙',
+  GitLab: '🦊',
   LinkedIn: '🔗',
   CV: '📄',
-  Privacy: '🔒',
 };
 
 export function Footer() {
@@ -32,6 +32,10 @@ export function Footer() {
             <span aria-hidden="true">{socialIconMap.GitHub}</span>
             <span>GitHub</span>
           </a>
+          <a href={site.gitlab} className="footer-icon-link">
+            <span aria-hidden="true">{socialIconMap.GitLab}</span>
+            <span>GitLab</span>
+          </a>
           <a href={site.linkedin} className="footer-icon-link">
             <span aria-hidden="true">{socialIconMap.LinkedIn}</span>
             <span>LinkedIn</span>
@@ -39,10 +43,6 @@ export function Footer() {
           <Link href="/cv" className="footer-icon-link">
             <span aria-hidden="true">{socialIconMap.CV}</span>
             <span>CV</span>
-          </Link>
-          <Link href="/privacy" className="footer-icon-link">
-            <span aria-hidden="true">{socialIconMap.Privacy}</span>
-            <span>Privacy</span>
           </Link>
         </div>
       </div>

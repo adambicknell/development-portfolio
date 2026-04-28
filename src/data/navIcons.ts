@@ -3,5 +3,8 @@ export const navIconMap: Record<string, string> = {
   'Case Studies': '🧪',
   'Demo Projects': '🛠️',
   Experience: '💼',
-  Skills: '✨'
+  Skills: '✨',
+  Now: '🕒',
+  Uses: '🧰',
+  Contact: '✉️'
 };

@@ -76,7 +76,7 @@ button { cursor: pointer; }
 .diagram-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .diagram-node { border: 1px solid var(--border); background: var(--surface); padding: 12px 14px; border-radius: 14px; font-weight: 800; }
 .arrow { color: var(--muted); }
-.overlay { position: fixed; inset: 0; background: rgba(2,6,23,.5); z-index: 80; display: grid; place-items: start center; padding-top: 10vh; }
+.overlay { position: fixed; inset: 0; height: 100vh; background: rgba(2,6,23,.5); z-index: 80; display: grid; place-items: start center; padding-top: 10vh; }
 .modal { width: min(880px, calc(100% - 32px)); max-height: 80vh; overflow: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; box-shadow: 0 40px 90px rgba(0,0,0,.35); padding: 20px; }
 .skip-link { position: absolute; top: -100px; left: 12px; background: var(--primary); color: var(--primaryInk); padding: 10px 14px; border-radius: 10px; z-index: 100; }
 .skip-link:focus { top: 12px; }
