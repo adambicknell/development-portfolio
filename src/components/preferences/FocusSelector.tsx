@@ -1,5 +1,5 @@
 "use client";
-import { focusOptions, FocusOption } from "@/data/site";
+import { focusOptions } from "@/data/site";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setSelectedFocus } from "@/store/slices/preferencesSlice";
 export function FocusSelector({ compact = false }: { compact?: boolean }) {
@@ -21,13 +21,13 @@ export function FocusSelector({ compact = false }: { compact?: boolean }) {
           <button
             key={option}
             className={"button " + (selected === option ? "primary" : "")}
-            onClick={() => dispatch(setSelectedFocus(option as FocusOption))}
+            onClick={() => dispatch(setSelectedFocus(selected === option ? null : option))}
           >
             {option}
           </button>
         ))}
       </div>
-      <p className="muted">Selected: {selected}</p>
+      <p className="muted">Selected: {selected ?? 'All'}</p>
     </div>
   );
 }

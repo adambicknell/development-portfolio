@@ -75,7 +75,7 @@ export function CommandPalette() {
           onChange={(event) => setQuery(event.target.value)}
         />
         <p className="muted" style={{ marginTop: 10 }}>
-          Focus filter active: {selectedFocus}
+          Focus filter active: {selectedFocus ?? 'All'}
         </p>
         <div className="grid" style={{ marginTop: 18 }}>
           {items.slice(0, 12).map((item) => (

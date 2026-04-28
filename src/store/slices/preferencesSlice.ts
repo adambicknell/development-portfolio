@@ -2,8 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { FocusOption } from '@/data/site';
 export type ThemeMode = 'light' | 'dark' | 'system';
 export type ViewMode = 'cards' | 'compact';
-export type PreferencesState = { theme: ThemeMode; selectedFocus: FocusOption; reducedMotion: boolean; caseStudyViewMode: ViewMode; projectViewMode: ViewMode };
-const initialState: PreferencesState = { theme: 'system', selectedFocus: 'Full stack', reducedMotion: false, caseStudyViewMode: 'cards', projectViewMode: 'cards' };
+export type PreferencesState = { theme: ThemeMode; selectedFocus: FocusOption | null; reducedMotion: boolean; caseStudyViewMode: ViewMode; projectViewMode: ViewMode };
+const initialState: PreferencesState = { theme: 'system', selectedFocus: null, reducedMotion: false, caseStudyViewMode: 'cards', projectViewMode: 'cards' };
 const storageKey = 'adam-portfolio-preferences';
 export function applyTheme(theme: ThemeMode) {
   if (typeof window === 'undefined') return;
@@ -25,7 +25,7 @@ const slice = createSlice({
       try { Object.assign(state, JSON.parse(raw)); } catch {}
     },
     setTheme: (state, action: PayloadAction<ThemeMode>) => { state.theme = action.payload; },
-    setSelectedFocus: (state, action: PayloadAction<FocusOption>) => { state.selectedFocus = action.payload; },
+    setSelectedFocus: (state, action: PayloadAction<FocusOption | null>) => { state.selectedFocus = action.payload; },
     setReducedMotion: (state, action: PayloadAction<boolean>) => { state.reducedMotion = action.payload; },
     setCaseStudyViewMode: (state, action: PayloadAction<ViewMode>) => { state.caseStudyViewMode = action.payload; },
     setProjectViewMode: (state, action: PayloadAction<ViewMode>) => { state.projectViewMode = action.payload; },
