@@ -1,23 +1,29 @@
-'use client';
+"use client";
 
-import { FocusSelector } from '@/components/preferences/FocusSelector';
-import { CaseStudyCard } from '@/components/cards/CaseStudyCard';
-import { CaseStudyFilters } from '@/components/case-studies/CaseStudyFilters';
-import { CompareDrawer } from '@/components/case-studies/CompareDrawer';
-import { caseStudies } from '@/data/caseStudies';
-import { useAppSelector } from '@/store/hooks';
-import { joinSearchFields } from '@/lib/filter';
-import { filterCaseStudiesByFocus } from '@/lib/focus';
+import { FocusSelector } from "@/components/preferences/FocusSelector";
+import { CaseStudyCard } from "@/components/cards/CaseStudyCard";
+import { CaseStudyFilters } from "@/components/case-studies/CaseStudyFilters";
+import { CompareDrawer } from "@/components/case-studies/CompareDrawer";
+import { caseStudies } from "@/data/caseStudies";
+import { useAppSelector } from "@/store/hooks";
+import { joinSearchFields } from "@/lib/filter";
+import { filterCaseStudiesByFocus } from "@/lib/focus";
 
 export default function CaseStudiesPage() {
-  const { selectedFocus, caseStudyViewMode } = useAppSelector((state) => state.preferences);
-  const { caseStudySearch, activeTags } = useAppSelector((state) => state.filters);
+  const { selectedFocus, caseStudyViewMode } = useAppSelector(
+    (state) => state.preferences,
+  );
+  const { caseStudySearch, activeTags } = useAppSelector(
+    (state) => state.filters,
+  );
 
   const filtered = filterCaseStudiesByFocus(caseStudies, selectedFocus)
     .filter(
       (item) =>
         activeTags.length === 0 ||
-        activeTags.some((tag) => item.tags.includes(tag) || item.techStack.includes(tag))
+        activeTags.some(
+          (tag) => item.tags.includes(tag) || item.techStack.includes(tag),
+        ),
     )
     .filter((item) =>
       joinSearchFields([
@@ -26,8 +32,8 @@ export default function CaseStudiesPage() {
         item.problem,
         item.role,
         item.techStack,
-        item.tags
-      ]).includes(caseStudySearch.toLowerCase())
+        item.tags,
+      ]).includes(caseStudySearch.toLowerCase()),
     );
 
   return (
@@ -39,8 +45,8 @@ export default function CaseStudiesPage() {
             <h1 className="h1">Case studies</h1>
             <p className="lead">
               Anonymised examples based on private commercial systems, internal
-              platforms, SaaS work, secure access, cloud delivery, and production
-              support.
+              platforms, SaaS work, secure access, cloud delivery, and
+              production support.
             </p>
           </div>
           <div className="card">
@@ -52,17 +58,17 @@ export default function CaseStudiesPage() {
           </div>
         </div>
 
-        <div className="grid" style={{ margin: '28px 0' }}>
+        <div className="grid" style={{ margin: "28px 0" }}>
           <FocusSelector compact />
           <CaseStudyFilters />
         </div>
 
         <p className="muted">
-          Showing {filtered.length} of {caseStudies.length} case studies. View mode:{' '}
-          {caseStudyViewMode}
+          Showing {filtered.length} of {caseStudies.length} case studies. View
+          mode: {caseStudyViewMode}
         </p>
 
-        <div className={caseStudyViewMode === 'cards' ? 'grid grid-2' : 'grid'}>
+        <div className={caseStudyViewMode === "cards" ? "grid grid-2" : "grid"}>
           {filtered.map((item) => (
             <CaseStudyCard key={item.slug} item={item} />
           ))}
@@ -71,7 +77,9 @@ export default function CaseStudiesPage() {
         {filtered.length === 0 && (
           <div className="card">
             <h2>No case studies match those filters.</h2>
-            <p className="muted">Try removing one filter or switching the hiring focus.</p>
+            <p className="muted">
+              Try removing one filter or switching the portfolio focus.
+            </p>
           </div>
         )}
       </div>
