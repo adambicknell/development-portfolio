@@ -6,13 +6,15 @@ export default function Page() {
   return (
     <section className="section">
       <div className="container">
-        <span className="eyebrow">Contact</span>
-        <h1 className="h1">Contact</h1>
-        <p className="lead">
-          For professional enquiries, project discussions, technical
-          conversations, or collaboration, you can contact me directly by email
-          or connect with me through LinkedIn and GitHub.
-        </p>
+        <div className="animate-fade-in-left">
+          <span className="eyebrow">Contact</span>
+          <h1 className="h1">Contact</h1>
+          <p className="lead">
+            For professional enquiries, project discussions, technical
+            conversations, or collaboration, you can contact me directly by
+            email or connect with me through LinkedIn and GitHub.
+          </p>
+        </div>
 
         <div className="grid grid-3 section-tight">
           <a className="card" href="mailto:adam@bicknell.uk">

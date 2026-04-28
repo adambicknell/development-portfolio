@@ -9,7 +9,7 @@ export default function HomePage() {
       <JsonLd data={personSchema} />
       <section className="section">
         <div className="container hero-grid">
-          <div>
+          <div className="animate-fade-in-left">
             <span className="eyebrow">{site.role}</span>
             <h1 className="h1">Full Stack React Developer</h1>
             <p className="lead">I build practical full stack software for real business workflows: portals, dashboards, APIs, automation tools, modelling platforms, secure internal systems, and cloud based applications.</p>
@@ -20,7 +20,7 @@ export default function HomePage() {
               <a className="button ghost" href={site.github}>Open GitHub</a>
             </div>
           </div>
-          <aside className="card">
+          <aside className="card animate-fade-in-right">
             <span className="eyebrow">At a glance</span>
             <h2 className="h3">React | TypeScript | Python | APIs | Cloud</h2>
             <div className="grid">
