@@ -103,6 +103,31 @@ button {
   animation-duration: 0.7s;
   animation-fill-mode: both;
 }
+
+.card-compact {
+  padding: 16px;
+  border-radius: 16px;
+}
+.card-compact .h3 {
+  margin: 4px 0 8px;
+  font-size: 1.08rem;
+}
+.card-compact p {
+  margin: 8px 0;
+}
+.card-compact .tag {
+  padding: 4px 8px;
+  font-size: 0.74rem;
+}
+.card-compact .row {
+  gap: 8px;
+}
+.card-compact .button {
+  min-height: 36px;
+  padding: 0 14px;
+  font-size: 0.9rem;
+}
+
 .card-soft {
   background: var(--soft);
   border: 1px solid var(--border);

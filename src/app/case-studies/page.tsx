@@ -64,7 +64,7 @@ export default function CaseStudiesPage() {
 
         <div className={caseStudyViewMode === 'cards' ? 'grid grid-2 animate-grid-2' : 'grid animate-grid-single'}>
           {filtered.map((item) => (
-            <CaseStudyCard key={item.slug} item={item} />
+            <CaseStudyCard key={item.slug} item={item} compact={caseStudyViewMode === 'compact'} />
           ))}
         </div>
 

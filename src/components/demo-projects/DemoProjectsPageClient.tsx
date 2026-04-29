@@ -8,7 +8,7 @@ import { useAppSelector } from '@/store/hooks';
 import { filterProjectsByFocus } from '@/lib/focus';
 
 export function DemoProjectsPageClient() {
-  const selectedFocus = useAppSelector((state) => state.preferences.selectedFocus);
+  const { selectedFocus, projectViewMode } = useAppSelector((state) => state.preferences);
   const filteredProjects = filterProjectsByFocus(projects, selectedFocus);
 
   return (
@@ -43,11 +43,13 @@ export function DemoProjectsPageClient() {
             tools, secure access, document handling, and internal operations.
           </SectionHeader>
 
-          <p className="muted">Showing {filteredProjects.length} of {projects.length} demo projects.</p>
+          <p className="muted">
+            Showing {filteredProjects.length} of {projects.length} demo projects. View mode: {projectViewMode}
+          </p>
 
-          <div className="grid grid-3 animate-grid-3">
+          <div className={projectViewMode === 'cards' ? 'grid grid-3 animate-grid-3' : 'grid animate-grid-single'}>
             {filteredProjects.map((item) => (
-              <ProjectCard key={item.slug} item={item} />
+              <ProjectCard key={item.slug} item={item} compact={projectViewMode === 'compact'} />
             ))}
           </div>
         </div>
