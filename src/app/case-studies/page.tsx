@@ -1,23 +1,25 @@
 'use client';
 
-import { FocusSelector } from '@/components/preferences/FocusSelector';
 import { CaseStudyCard } from '@/components/cards/CaseStudyCard';
 import { CaseStudyFilters } from '@/components/case-studies/CaseStudyFilters';
 import { CompareDrawer } from '@/components/case-studies/CompareDrawer';
 import { caseStudies } from '@/data/caseStudies';
 import { useAppSelector } from '@/store/hooks';
 import { joinSearchFields } from '@/lib/filter';
-import { filterCaseStudiesByFocus } from '@/lib/focus';
+import { focusOptions } from '@/data/site';
 
 export default function CaseStudiesPage() {
-  const { selectedFocus, caseStudyViewMode } = useAppSelector((state) => state.preferences);
+  const { caseStudyViewMode } = useAppSelector((state) => state.preferences);
   const { caseStudySearch, activeTags } = useAppSelector((state) => state.filters);
+  const filterTags = Array.from(new Set([...focusOptions, ...caseStudies.flatMap((item) => [...item.tags, ...item.techStack])])).sort();
 
-  const filtered = filterCaseStudiesByFocus(caseStudies, selectedFocus)
+  const filtered = caseStudies
     .filter(
       (item) =>
         activeTags.length === 0 ||
-        activeTags.some((tag) => item.tags.includes(tag) || item.techStack.includes(tag))
+        activeTags.every((tag) =>
+          [...item.tags, ...item.techStack, ...item.focusAreas].includes(tag)
+        )
     )
     .filter((item) =>
       joinSearchFields([
@@ -53,8 +55,7 @@ export default function CaseStudiesPage() {
         </div>
 
         <div className="grid" style={{ margin: '28px 0' }}>
-          <FocusSelector compact />
-          <CaseStudyFilters />
+          <CaseStudyFilters tags={filterTags} scope="caseStudies" />
         </div>
 
         <p className="muted">

@@ -1,15 +1,33 @@
 'use client';
 
 import { ProjectCard } from '@/components/cards/ProjectCard';
+import { CaseStudyFilters } from '@/components/case-studies/CaseStudyFilters';
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { FocusSelector } from '@/components/preferences/FocusSelector';
 import { projects } from '@/data/projects';
+import { focusOptions } from '@/data/site';
 import { useAppSelector } from '@/store/hooks';
-import { filterProjectsByFocus } from '@/lib/focus';
+import { joinSearchFields } from '@/lib/filter';
 
 export function DemoProjectsPageClient() {
-  const { selectedFocus, projectViewMode } = useAppSelector((state) => state.preferences);
-  const filteredProjects = filterProjectsByFocus(projects, selectedFocus);
+  const { projectViewMode } = useAppSelector((state) => state.preferences);
+  const { projectSearch, activeTags } = useAppSelector((state) => state.filters);
+  const filterTags = Array.from(new Set([...focusOptions, ...projects.flatMap((item) => [...item.tags, ...item.techStack])])).sort();
+  const filteredProjects = projects
+    .filter(
+      (item) =>
+        activeTags.length === 0 ||
+        activeTags.every((tag) => [...item.tags, ...item.techStack, ...item.focusAreas].includes(tag))
+    )
+    .filter((item) =>
+      joinSearchFields([
+        item.title,
+        item.summary,
+        item.problem,
+        item.features,
+        item.techStack,
+        item.tags
+      ]).includes(projectSearch.toLowerCase())
+    );
 
   return (
     <section className="section">
@@ -34,7 +52,7 @@ export function DemoProjectsPageClient() {
         </div>
 
         <div style={{ margin: '30px 0' }}>
-          <FocusSelector compact />
+          <CaseStudyFilters tags={filterTags} scope="projects" />
         </div>
 
         <div className="section-tight">
