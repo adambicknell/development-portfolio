@@ -11,7 +11,7 @@ export const site = {
   description: 'Full Stack React Developer working across React, TypeScript, Python, APIs, cloud systems, secure internal tools, SaaS platforms, and business systems.',
   headline: 'React | TypeScript | Python | APIs | Cloud | Business Systems'
 };
-export const focusOptions = ['React','Full stack','Python/API','Cloud','Internal tools','SaaS','Security/auth','Data'] as const;
+export const focusOptions = ['React & Frontend','Full Stack Delivery','Backend & APIs','Cloud & Infrastructure','Internal Tools & Workflows','SaaS & Platform','Security & Identity','Data & Datastores'] as const;
 export type FocusOption = typeof focusOptions[number];
 export const navItems = [
   { href: '/about', label: 'About' },

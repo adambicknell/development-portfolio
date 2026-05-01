@@ -1,40 +1,18 @@
-export type ExperienceItem = { company: string; role: string; dates: string; summary: string; keyWork: string[]; tags: string[]; related?: string };
+export type ExperienceItem = {
+  company: string;
+  role: string;
+  dates: string;
+  summary: string;
+  responsibilities: string[];
+  techStack: string[];
+  outcomes: string[];
+  focusAreas: string[];
+  relatedCaseStudySlug?: string;
+};
+
 export const experience: ExperienceItem[] = [
-  {
-    company: 'Line Lab',
-    role: 'Staff Software Engineer',
-    dates: 'Feb 2025 to Present',
-    summary: 'Built and supported a proprietary solver platform involving a Python and Flask backend, Electron desktop client, Azure deployment, Terraform infrastructure, licensing, customer-managed deployment, and private cloud considerations.',
-    keyWork: ['Delivered Terraform infrastructure for Azure Container Apps, networking, storage, and managed database services','Built and maintained Electron desktop client and installer flows','Worked on licensing and controlled platform access to protect IP','Modernised Python API and modelling code with tests, formatting, and static analysis'],
-    tags: ['Python','Flask','Electron','Azure','Terraform','MySQL','Licensing'],
-    related: 'Solver and Modelling Platform'
-  },
-  {
-    company: 'Entertainment Partners',
-    role: 'Staff Software Engineer',
-    dates: 'Jan 2022 to Aug 2024',
-    summary: 'Delivered features for a multi-region SaaS casting platform across a Python backend, React TypeScript frontend, Mako server-rendered views, PostgreSQL, database migrations, QA, UAT, monitoring, and production support.',
-    keyWork: ['Delivered SmartID single sign-on for a major client','Built React TypeScript features supported by Python services and Node.js components','Worked with PostgreSQL and SQLAlchemy migrations','Shipped through structured QA, product review, and UAT processes'],
-    tags: ['React','TypeScript','Python','PostgreSQL','SSO','SaaS'],
-    related: 'Multi-region SaaS Platform Features'
-  },
-  {
-    company: 'Fletchers Solicitors',
-    role: 'Senior Full Stack Developer',
-    dates: 'Feb 2020 to Oct 2021',
-    summary: 'Delivered secure Azure based SaaS and internal systems across React, Redux, Azure AD, Azure Functions, data services, workflow automation, search, monitoring, network security, QA, UAT, and CI/CD.',
-    keyWork: ['Built React and Redux user interfaces','Integrated Azure Active Directory authentication','Integrated machine learning models through Azure Functions with AI specialists','Delivered through Azure DevOps CI/CD with QA, UAT, and multi-region testing'],
-    tags: ['React','Redux','Azure','Azure AD','Azure Functions','CI/CD'],
-    related: 'Internal Operations Portal'
-  },
-  {
-    company: 'Fletchers Solicitors',
-    role: 'Systems Developer',
-    dates: 'Feb 2018 to Feb 2020',
-    summary: 'Delivered secure document access, platform security improvements, database support, reporting, authentication work, and operational systems inside a business critical legal environment.',
-    keyWork: ['Designed and deployed SOAP based authentication for secure legal document access','Remediated penetration test findings and strengthened access controls','Administered and optimised MS SQL, MySQL, MariaDB, and PostgreSQL databases','Produced BI reporting to support business decision-making'],
-    tags: ['Authentication','SOAP','Databases','Security','BI reporting'],
-    related: 'Secure Client Document Portal'
-  }
+  { company:'Line Lab', role:'Staff Software Engineer', dates:'Feb 2025 to Present', summary:'Built and supported a proprietary solver platform spanning desktop delivery, Python services, licensing, and Azure infrastructure.', responsibilities:['Delivered Terraform infrastructure for Azure Container Apps, networking, storage, and managed database services.','Built and maintained Electron desktop client and installer workflows.','Implemented licensing and controlled runtime access for IP protection and customer-managed environments.','Improved Python code quality with tests, formatting, linting, and static analysis.'], techStack:['Python','Flask','Electron','Azure','Terraform','MySQL'], outcomes:['Improved deployment repeatability and environment consistency.','Increased platform stability and supportability.'], focusAreas:['Backend & APIs','Cloud & Infrastructure','SaaS & Platform'], relatedCaseStudySlug:'solver-and-modelling-platform' },
+  { company:'Entertainment Partners', role:'Staff Software Engineer', dates:'Jan 2022 to Aug 2024', summary:'Delivered multi-region SaaS features across React, TypeScript, Python, identity, QA/UAT, and production support.', responsibilities:['Delivered SmartID SSO support for a major client integration.','Implemented full-stack features across React TypeScript UI and Python services.','Managed PostgreSQL/SQLAlchemy migrations through release cycles.','Supported QA, UAT, and production triage workflows.'], techStack:['React','TypeScript','Python','PostgreSQL','SQLAlchemy','SmartID'], outcomes:['Released user-facing features safely across regions.','Improved identity and release reliability.'], focusAreas:['React & Frontend','Full Stack Delivery','Security & Identity','Production Reliability'], relatedCaseStudySlug:'multi-region-saas-platform-features' }
 ];
-export const earlierRoles = ['Engage Solutions','Clicky Media','Ditto Music','Paymentshield'];
+
+export const earlierRoles = ['Fletchers Solicitors — Senior Full Stack Developer — Feb 2020 to Oct 2021','Fletchers Solicitors — Systems Developer — Feb 2018 to Feb 2020','Engage Solutions — Full Stack Developer — Aug 2016 to Feb 2018','Clicky Media — Full Stack Developer — Oct 2015 to Aug 2016','Ditto Music — Full Stack Developer — Feb 2015 to Oct 2015','Paymentshield — Application and Support Engineer — May 2014 to Feb 2015','Paymentshield — Infrastructure Support Analyst — May 2005 to Aug 2006'];

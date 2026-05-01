@@ -2,9 +2,12 @@ import type { CaseStudy } from '@/data/caseStudies';
 import type { DemoProject } from '@/data/projects';
 import type { SkillGroup } from '@/data/skills';
 import type { FocusOption } from '@/data/site';
+import { normalizeFocus } from '@/lib/taxonomy';
 
 export function matchesFocus(focusAreas: string[], selectedFocus: FocusOption | null) {
-  return selectedFocus === null || selectedFocus === 'Full stack' || focusAreas.includes(selectedFocus);
+  if (selectedFocus === null || selectedFocus === 'Full Stack Delivery') return true;
+  const normalized = new Set(focusAreas.map((focus) => normalizeFocus(focus)).filter(Boolean));
+  return normalized.has(selectedFocus);
 }
 
 export function filterCaseStudiesByFocus(items: CaseStudy[], selectedFocus: FocusOption | null) {

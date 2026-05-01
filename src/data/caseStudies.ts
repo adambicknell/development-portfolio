@@ -11,6 +11,7 @@ export type CaseStudy = {
   keyDecisions: string[];
   outcomes: string[];
   improvements: string[];
+  whatThisProves: string[];
   tags: string[];
   focusAreas: string[];
   relatedProject?: string;
@@ -31,6 +32,7 @@ export const caseStudies: CaseStudy[] = [
     keyDecisions: ['Keep access rules explicit','Work with the existing platform','Treat support as part of the product'],
     outcomes: ['Improved controlled access to sensitive documents','Strengthened authentication and access handling','Reduced risky manual workarounds'],
     improvements: ['Deeper audit visibility','Clearer admin tooling','Structured role based access management'],
+    whatThisProves: ['Security-first delivery in regulated workflows','Practical access-control implementation across legacy constraints'],
     tags: ['Security','Auth','Databases','Production support'],
     focusAreas: ['Security/auth','Internal tools','Data'],
     relatedProject: 'client-document-portal-demo',
@@ -49,6 +51,7 @@ export const caseStudies: CaseStudy[] = [
     keyDecisions: ['Keep the UI focused on staff workflows','Use cloud services where they reduced operational friction','Make release and support part of the delivery plan'],
     outcomes: ['Improved internal workflow support','Delivered secure cloud based features','Supported operational visibility and automation'],
     improvements: ['More structured analytics','Reusable component documentation','Expanded admin self-service'],
+    whatThisProves: ['Internal tooling that reduces workflow friction','Full-stack delivery with cloud identity integration'],
     tags: ['React','Redux','Azure','Internal tools','Workflow automation'],
     focusAreas: ['React','Full stack','Cloud','Internal tools'],
     diagram: ['Staff user','Azure AD','React and Redux UI','API services','Business data','Monitoring']
@@ -66,6 +69,7 @@ export const caseStudies: CaseStudy[] = [
     keyDecisions: ['Coordinate identity changes across areas','Respect regional release constraints','Keep migrations and QA visible'],
     outcomes: ['Delivered SmartID SSO support','Shipped React TypeScript features','Supported production release processes'],
     improvements: ['More reusable release notes','Extra automated checks around identity flows','More explicit documentation around regional behaviour'],
+    whatThisProves: ['SaaS feature delivery in mature release pipelines','Ownership across frontend, backend, data, and support'],
     tags: ['React','TypeScript','Python','SaaS','SSO','Production support'],
     focusAreas: ['React','Full stack','SaaS','Security/auth'],
     diagram: ['User','React TypeScript UI','Server-rendered views','Python services','PostgreSQL','Monitoring']
@@ -83,6 +87,7 @@ export const caseStudies: CaseStudy[] = [
     keyDecisions: ['Protect IP through licensing','Support customer managed deployment','Make infrastructure repeatable with Terraform'],
     outcomes: ['Delivered Azure infrastructure','Supported controlled private cloud execution','Improved backend quality checks'],
     improvements: ['More self-service deployment diagnostics','Expanded architecture documentation','Richer platform observability'],
+    whatThisProves: ['Platform engineering across app + infra boundaries','Secure commercial product delivery in private-cloud contexts'],
     tags: ['Python','Flask','Electron','Azure','Terraform','Licensing'],
     focusAreas: ['Python/API','Cloud','Full stack','Data'],
     diagram: ['Desktop client','Licence check','Python Flask backend','Solver logic','Azure Container Apps','Database and storage']

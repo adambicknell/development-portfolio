@@ -1,59 +1,42 @@
 'use client';
 
+import { useMemo, useState } from 'react';
 import { FocusSelector } from '@/components/preferences/FocusSelector';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { TagList } from '@/components/cards/TagList';
 import { skillGroups } from '@/data/skills';
 import { useAppSelector } from '@/store/hooks';
 import { filterSkillGroupsByFocus } from '@/lib/focus';
+import { normalizeFocus } from '@/lib/taxonomy';
 
 export function SkillsPageClient() {
   const selectedFocus = useAppSelector((state) => state.preferences.selectedFocus);
-  const filteredGroups = filterSkillGroupsByFocus(skillGroups, selectedFocus);
+  const [query, setQuery] = useState('');
+  const filteredGroups = useMemo(() => filterSkillGroupsByFocus(skillGroups, selectedFocus).filter((group) => {
+    const q = query.toLowerCase();
+    if (!q) return true;
+    return [group.title, group.summary, ...group.skills].join(' ').toLowerCase().includes(q) || Boolean(normalizeFocus(query));
+  }), [selectedFocus, query]);
 
   return (
     <section className="section">
       <div className="container">
-        <div className="space-between">
-          <div className="animate-fade-in-left">
-            <span className="eyebrow">Technical range</span>
-            <h1 className="h1">Skills</h1>
-            <p className="lead">
-              React and TypeScript sit at the centre of my current frontend work,
-              supported by broader experience across Vue, vanilla JavaScript,
-              jQuery, server-rendered views, Python APIs, PHP backends, Azure,
-              AWS, databases, CI/CD, secure access, and legacy modernisation.
-            </p>
-          </div>
-
-          <div className="card animate-fade-in-right">
-            <strong>Core focus</strong>
-            <p className="muted">
-              React, TypeScript, Python, APIs, cloud delivery, and practical
-              business systems.
-            </p>
-          </div>
-        </div>
-
-        <div style={{ margin: '30px 0' }}>
-          <FocusSelector compact />
-        </div>
-
+        <h1 className="h1">Skills</h1>
+        <input className='input' placeholder='Search skills or focus areas…' value={query} onChange={(e)=>setQuery(e.target.value)} />
+        <div style={{ margin: '20px 0' }}><FocusSelector compact /></div>
         <p className="muted">Showing {filteredGroups.length} of {skillGroups.length} skill groups.</p>
-
         <div className="grid animate-grid-single">
           {filteredGroups.map((group) => (
-            <section className="card" id={group.slug} key={group.slug}>
-              <SectionHeader title={group.title}>{group.summary}</SectionHeader>
-
-              <TagList tags={group.skills} />
-
-              <p>
-                <strong>Related work</strong>
-              </p>
-
+            <details className="card" id={group.slug} key={group.slug}>
+              <summary><strong>{group.title}</strong></summary>
+              <SectionHeader title="Summary">{group.summary}</SectionHeader>
+              <p><strong>Core tools</strong></p>
+              <TagList tags={group.skills.slice(0,8)} />
+              <p><strong>Extended ecosystem</strong></p>
+              <TagList tags={group.skills.slice(8)} />
+              <p><strong>Related evidence</strong></p>
               <TagList tags={group.related} />
-            </section>
+            </details>
           ))}
         </div>
       </div>
