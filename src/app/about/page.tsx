@@ -9,7 +9,7 @@ export default function Page() {
       <div className="container">
         <div className="space-between">
           <div className="animate-fade-in-left" style={{ maxWidth: 760 }}>
-            <span className="eyebrow">About</span>
+            <span className="eyebrow">Professional profile</span>
             <h1 className="h1">About Adam</h1>
             <p className="lead">
               I’m a UK based full stack React engineer with experience across

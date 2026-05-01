@@ -11,7 +11,7 @@ export default function Page() {
       <div className="container">
         <div className="space-between">
           <div className="animate-fade-in-left" style={{ maxWidth: 760 }}>
-            <span className="eyebrow">Contact</span>
+            <span className="eyebrow">Get in touch</span>
             <h1 className="h1">Contact</h1>
             <p className="lead">
               If you want to connect about portfolio content or technical

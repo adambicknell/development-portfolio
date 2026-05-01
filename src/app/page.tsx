@@ -13,7 +13,7 @@ export default function HomePage() {
         <div className="container">
           <div className="hero-home-layout">
             <div className="animate-fade-in-left hero-left-stack">
-              <span className="eyebrow">{site.role}</span>
+              <span className="eyebrow">Portfolio</span>
               <h1 className="h1">Full Stack React Developer</h1>
               <p className="lead">
                 I build practical full stack software for real business
