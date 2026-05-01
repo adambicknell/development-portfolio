@@ -15,6 +15,8 @@ export type CaseStudy = {
   tags: string[];
   focusAreas: string[];
   relatedProject?: string;
+  liveUrl?: string;
+  imagePlaceholder?: string;
   diagram: string[];
 };
 
@@ -73,6 +75,67 @@ export const caseStudies: CaseStudy[] = [
     tags: ['React','TypeScript','Python','SaaS','SSO','Production Support'],
     focusAreas: ['React','Full stack','SaaS','Security/auth'],
     diagram: ['User','React TypeScript UI','Server-rendered views','Python services','PostgreSQL','Monitoring']
+  },
+
+  {
+    slug: 'nwpg-digital-hub',
+    title: 'NWPG Digital Hub',
+    shortTitle: 'NWPG Hub',
+    summary: 'WordPress-led client website delivery for NWPG with service content architecture and accessible marketing pages.',
+    context: 'A client-facing business website that needed a clearer information architecture, easier content publishing, and a trustworthy professional presentation.',
+    problem: 'The site needed maintainable page templates, structured service content, and an authoring workflow that non-technical users could manage in WordPress.',
+    role: 'Owned implementation and delivery across WordPress setup, theme customisation, page structure, and launch support.',
+    approach: 'Used practical content modelling and reusable page sections so the site could scale without custom engineering for every update.',
+    techStack: ['WordPress','PHP','JavaScript','CSS','SEO','Content strategy'],
+    keyDecisions: ['Build around reusable WordPress page patterns','Prioritise content maintainability for non-technical editors','Optimise key landing pages for search and conversions'],
+    outcomes: ['Delivered a production WordPress client website','Improved service discoverability and page consistency','Enabled low-friction editorial updates after handover'],
+    improvements: ['Add structured schema components per service page','Expand performance budgets for image-heavy content','Add deeper analytics event tracking for lead funnels'],
+    whatThisProves: ['Can deliver maintainable WordPress client platforms','Balances technical delivery with content and business outcomes'],
+    tags: ['WordPress','Client Website','CMS','SEO','Content Architecture','Responsive Design'],
+    focusAreas: ['Full stack','Internal tools','Data'],
+    liveUrl: 'https://www.nwpg.uk/',
+    imagePlaceholder: 'Add NWPG case-study screenshot here',
+    diagram: ['Visitor','Landing page','WordPress templates','Content modules','SEO metadata','Enquiry flow']
+  },
+  {
+    slug: 'bicknell-digital-platform',
+    title: 'Bicknell Digital Platform',
+    shortTitle: 'Bicknell Digital',
+    summary: 'Business website platform for Bicknell Digital on WordPress, focused on service packaging, content publishing, and conversion paths.',
+    context: 'A commercial website representing digital and publishing services that required rapid iteration and owner-managed updates.',
+    problem: 'The platform needed clear service taxonomy, reusable marketing sections, and reliable publishing workflows without developer bottlenecks.',
+    role: 'Designed and implemented the platform structure, service-page flow, and WordPress editing model.',
+    approach: 'Applied a service-led information architecture with reusable components and conversion-focused page structure.',
+    techStack: ['WordPress','WooCommerce','PHP','JavaScript','CSS','Analytics'],
+    keyDecisions: ['Use WordPress for editorial speed','Keep service sections modular and reusable','Design around quote/contact conversion journeys'],
+    outcomes: ['Launched a production business website','Improved clarity of digital and publishing offerings','Enabled ongoing in-house content updates'],
+    improvements: ['Add deeper CRM integration for lead capture','Expand structured internal linking strategy','Increase template-level Core Web Vitals tuning'],
+    whatThisProves: ['Can build and operate commercial WordPress platforms','Strong delivery across UX, CMS architecture, and content ops'],
+    tags: ['WordPress','Business Website','CMS','Service Design','Conversion Optimisation','Publishing Workflow'],
+    focusAreas: ['Full stack','Data','Internal tools'],
+    liveUrl: 'https://digital.bicknell.uk/',
+    imagePlaceholder: 'Add Bicknell Digital homepage screenshot here',
+    diagram: ['Visitor','Service page','WordPress content blocks','Lead form','Newsletter/CRM','Reporting']
+  },
+  {
+    slug: 'petition-map',
+    title: 'Petition Map',
+    shortTitle: 'Petition Map',
+    summary: 'Interactive geospatial web app visualising petition-related datasets with GeoJSON, map layers, and location-based exploration.',
+    context: 'A public-facing map product designed to make geographic petition signals easier to explore than in raw tables or lists.',
+    problem: 'Users needed an intuitive way to interpret regional petition patterns, requiring map interaction, data processing, and performant rendering.',
+    role: 'Built the mapping experience and data pipeline, including GeoJSON handling, layer logic, and frontend interaction patterns.',
+    approach: 'Modelled data for map-first exploration, then implemented layer controls, geographic boundaries, and queryable point/area views.',
+    techStack: ['JavaScript','GeoJSON','Leaflet','Data processing','API integration','Responsive UI'],
+    keyDecisions: ['Use GeoJSON as the interchange format','Optimise geometry and properties for browser rendering','Expose filters and tooltips for exploratory analysis'],
+    outcomes: ['Delivered a working interactive petition map','Improved interpretability of geographically distributed data','Created a reusable baseline for future civic-data maps'],
+    improvements: ['Introduce tile/vector caching for larger datasets','Add temporal filtering and playback','Add automated data validation before publish'],
+    whatThisProves: ['Can ship geospatial products with production-ready UX','Strong data-to-visualisation workflow design'],
+    tags: ['Geospatial','GeoJSON','Leaflet','Data Visualisation','Interactive Map','Civic Tech'],
+    focusAreas: ['Data','Full stack','Internal tools'],
+    liveUrl: 'https://petition-map.bicknell.uk/',
+    imagePlaceholder: 'Add Petition Map screenshot here',
+    diagram: ['User','Map UI','Layer controls','GeoJSON dataset','Boundary rendering','Insights']
   },
   {
     slug: 'solver-and-modelling-platform',
