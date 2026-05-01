@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { PortfolioLinksRow } from "@/components/PortfolioLinksRow";
 
 export const metadata = { title: "About Adam" };
 
@@ -58,15 +59,7 @@ export default function Page() {
             </p>
           </div>
         </div>
-
-        <div className="row" style={{ marginTop: 28 }}>
-          <Link className="button primary" href="/case-studies">
-            View case studies
-          </Link>
-          <Link className="button" href="/demo-projects">
-            View demo projects
-          </Link>
-        </div>
+        <PortfolioLinksRow highlightCaseStudies />
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/data/site";
-import { FaEnvelope, FaFlask, FaGithub, FaGitlab, FaHammer, FaLinkedin, FaStackOverflow } from "react-icons/fa6";
+import { PortfolioLinksRow } from "@/components/PortfolioLinksRow";
+import { FaEnvelope, FaGithub, FaGitlab, FaLinkedin, FaStackOverflow } from "react-icons/fa6";
 
 export const metadata = { title: "Contact" };
 
@@ -71,23 +71,7 @@ export default function Page() {
           </a>
         </div>
 
-        <div className="row" style={{ marginTop: 28 }}>
-          <Link className="button primary" href="/case-studies">
-            <><FaFlask aria-hidden="true" /> Case Studies</>
-          </Link>
-          <Link className="button" href="/demo-projects">
-            <><FaHammer aria-hidden="true" /> Demo Projects</>
-          </Link>
-          <a className="button" href={site.github}>
-            <><FaGithub aria-hidden="true" /> GitHub</>
-          </a>
-          <a className="button" href={site.gitlab}>
-            <><FaGitlab aria-hidden="true" /> GitLab</>
-          </a>
-          <a className="button" href={site.stackoverflow}>
-            <><FaStackOverflow aria-hidden="true" /> StackOverflow</>
-          </a>
-        </div>
+        <PortfolioLinksRow highlightCaseStudies />
       </div>
     </section>
   );

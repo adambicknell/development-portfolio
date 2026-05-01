@@ -1,6 +1,5 @@
-import Link from 'next/link';
-import { site } from '@/data/site';
-import { FaFlask, FaGithub, FaGitlab, FaHammer, FaStackOverflow } from 'react-icons/fa6';
+
+import { PortfolioLinksRow } from '@/components/PortfolioLinksRow';
 
 export const metadata = { title: 'Now' };
 
@@ -31,23 +30,7 @@ export default function Page() {
             <h2>Support Triage Dashboard</h2>
           </div>
         </div>
-        <div className="row" style={{ marginTop: 28 }}>
-          <Link className="button primary" href="/case-studies">
-            <><FaFlask aria-hidden="true" /> Case Studies</>
-          </Link>
-          <Link className="button" href="/demo-projects">
-            <><FaHammer aria-hidden="true" /> Demo Projects</>
-          </Link>
-          <a className="button" href={site.github}>
-            <><FaGithub aria-hidden="true" /> GitHub</>
-          </a>
-          <a className="button" href={site.gitlab}>
-            <><FaGitlab aria-hidden="true" /> GitLab</>
-          </a>
-          <a className="button" href={site.stackoverflow}>
-            <><FaStackOverflow aria-hidden="true" /> StackOverflow</>
-          </a>
-        </div>
+        <PortfolioLinksRow highlightCaseStudies />
       </div>
     </section>
   );
