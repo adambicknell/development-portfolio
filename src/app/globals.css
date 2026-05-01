@@ -397,7 +397,6 @@ button {
   color: var(--footer-text);
   border-top: 1px solid var(--footer-border);
   padding: 42px 0;
-  margin-top: 64px;
 }
 .footer a,
 .footer .muted {
@@ -717,4 +716,43 @@ html[data-reduced-motion="true"] .card {
     box-shadow: none;
     border: 1px solid #ddd;
   }
+}
+
+.made-with {
+  margin-top: 100px;
+  padding: 20px;
+}
+
+.made-with .eyebrow {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 25px;
+}
+
+.made-with-copy {
+  margin: 8px 0 16px;
+}
+
+.made-with-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.made-with-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  font-weight: 600;
+}
+
+.made-with-icon {
+  display: inline-flex;
+  font-size: 1.2rem;
+  color: var(--primary);
 }

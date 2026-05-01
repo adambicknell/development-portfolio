@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { JsonLd, personSchema } from "@/lib/schema";
 import { PortfolioLinksRow } from "@/components/PortfolioLinksRow";
+import { FaCss3Alt, FaDatabase, FaNodeJs, FaReact } from "react-icons/fa";
+import { SiApache, SiNextdotjs, SiTypescript } from "react-icons/si";
 
 export default function HomePage() {
   return (
@@ -63,6 +65,31 @@ export default function HomePage() {
             </aside>
           </div>
           <PortfolioLinksRow marginTop={26} />
+          <section className="made-with" aria-label="Site technology stack">
+            <span className="eyebrow">Made with</span>
+            <ul className="made-with-grid">
+              {[
+                { label: "Next.js", icon: <SiNextdotjs aria-hidden="true" /> },
+                { label: "React", icon: <FaReact aria-hidden="true" /> },
+                {
+                  label: "TypeScript",
+                  icon: <SiTypescript aria-hidden="true" />,
+                },
+                { label: "Node.js", icon: <FaNodeJs aria-hidden="true" /> },
+                { label: "CSS", icon: <FaCss3Alt aria-hidden="true" /> },
+                { label: "JSON data", icon: <FaDatabase aria-hidden="true" /> },
+                {
+                  label: "Apache",
+                  icon: <SiApache aria-hidden="true" />,
+                },
+              ].map((tech) => (
+                <li key={tech.label} className="made-with-item">
+                  <span className="made-with-icon">{tech.icon}</span>
+                  <span>{tech.label}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
       </section>
     </>
