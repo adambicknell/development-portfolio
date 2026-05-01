@@ -4,11 +4,16 @@ import type { DemoProject } from '@/data/projects';
 import type { SkillGroup } from '@/data/skills';
 import type { FocusOption } from '@/data/site';
 import { normalizeFocus } from '@/lib/taxonomy';
+import type { ParentFilter } from '@/data/taxonomy';
 
 export function matchesFocus(focusAreas: string[], selectedFocus: FocusOption | null) {
   if (selectedFocus === null || selectedFocus === 'Full Stack Delivery') return true;
-  const normalized = new Set(focusAreas.map((focus) => normalizeFocus(focus)).filter(Boolean));
-  return normalized.has(selectedFocus);
+  const selected = normalizeFocus(selectedFocus);
+  if (!selected) return false;
+  const normalized = new Set<ParentFilter>(
+    focusAreas.map((focus) => normalizeFocus(focus)).filter((focus): focus is ParentFilter => focus !== null),
+  );
+  return normalized.has(selected);
 }
 
 export function filterCaseStudiesByFocus(items: CaseStudy[], selectedFocus: FocusOption | null) {

@@ -1,43 +1,64 @@
 'use client';
 
-import { useMemo, useState } from 'react';
-import { FocusSelector } from '@/components/preferences/FocusSelector';
-import { SectionHeader } from '@/components/common/SectionHeader';
+import Link from 'next/link';
 import { TagList } from '@/components/cards/TagList';
-import { skillGroups } from '@/data/skills';
-import { useAppSelector } from '@/store/hooks';
-import { filterSkillGroupsByFocus } from '@/lib/focus';
-import { normalizeFocus } from '@/lib/taxonomy';
+import { skillsPageIntro, skillsPageSections } from '@/data/skillsPage';
+
+const sectionAnchor = (title: string) =>
+  title
+    .toLowerCase()
+    .replace(/&/g, '')
+    .replace(/,/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
 
 export function SkillsPageClient() {
-  const selectedFocus = useAppSelector((state) => state.preferences.selectedFocus);
-  const [query, setQuery] = useState('');
-  const filteredGroups = useMemo(() => filterSkillGroupsByFocus(skillGroups, selectedFocus).filter((group) => {
-    const q = query.toLowerCase();
-    if (!q) return true;
-    return [group.title, group.summary, ...group.skills].join(' ').toLowerCase().includes(q) || Boolean(normalizeFocus(query));
-  }), [selectedFocus, query]);
-
   return (
     <section className="section">
       <div className="container">
-        <h1 className="h1">Skills</h1>
-        <input className='input' placeholder='Search skills or focus areas…' value={query} onChange={(e)=>setQuery(e.target.value)} />
-        <div style={{ margin: '20px 0' }}><FocusSelector compact /></div>
-        <p className="muted">Showing {filteredGroups.length} of {skillGroups.length} skill groups.</p>
+        <div className="space-between">
+          <div className="animate-fade-in-left">
+            <span className="eyebrow">{skillsPageIntro.eyebrow}</span>
+            <h1 className="h1">{skillsPageIntro.title}</h1>
+            <p className="lead">{skillsPageIntro.lead}</p>
+            <p>
+              <Link href={skillsPageIntro.azHref}>{skillsPageIntro.azPrompt}</Link>
+            </p>
+          </div>
+          <div className="card animate-fade-in-right">
+            <strong>Capability overview</strong>
+            <p className="muted">15 parent categories aligned to the shared taxonomy for quick scrolling and scanning.</p>
+          </div>
+        </div>
+
+        <div className="card" style={{ marginBottom: 16 }}>
+          <strong>Jump to:</strong>
+          <div className="row" style={{ marginTop: 12 }}>
+            {skillsPageSections.map((section) => {
+              const anchor = sectionAnchor(section.title);
+              return (
+                <a key={section.title} className="button" href={`#${anchor}`}>
+                  {section.title}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+
         <div className="grid animate-grid-single">
-          {filteredGroups.map((group) => (
-            <details className="card" id={group.slug} key={group.slug} open>
-              <summary><strong>{group.title}</strong></summary>
-              <SectionHeader title="Summary">{group.summary}</SectionHeader>
-              <p><strong>Core tools</strong></p>
-              <TagList tags={group.skills.slice(0,8)} />
-              <p><strong>Extended ecosystem</strong></p>
-              <TagList tags={group.skills.slice(8)} />
-              <p><strong>Related evidence</strong></p>
-              <TagList tags={group.related} />
-            </details>
-          ))}
+          {skillsPageSections.map((section) => {
+            const anchor = sectionAnchor(section.title);
+            return (
+              <article className="card" id={anchor} key={section.title}>
+                <h2>{section.title}</h2>
+                <p className="muted">{section.description}</p>
+                <TagList tags={section.skills} />
+                <p>
+                  <Link href="/skills/a-z">View related skills in the A-Z index</Link>
+                </p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
