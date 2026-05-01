@@ -103,6 +103,62 @@ button {
   animation-duration: 0.7s;
   animation-fill-mode: both;
 }
+.card-accordion summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.card-accordion summary::-webkit-details-marker {
+  display: none;
+}
+.card-accordion summary::after {
+  content: "+";
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.card-accordion[open] summary::after {
+  content: "−";
+}
+.card-accordion summary h2,
+.card-accordion summary p {
+  margin: 0;
+}
+.card-list {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.card-list li {
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-weight: 600;
+}
+
+
+.skills-az-groups {
+  grid-template-columns: 1fr;
+}
+
+.experience-groups {
+  grid-template-columns: 1fr;
+}
+
+.card-list-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.experience-accordion summary {
+  align-items: flex-start;
+}
 
 .card-compact {
   padding: 16px;
@@ -589,6 +645,9 @@ html[data-reduced-motion="true"] .card {
   .grid-4,
   .hero-grid,
   .hero-home-layout {
+    grid-template-columns: 1fr;
+  }
+  .card-list-3 {
     grid-template-columns: 1fr;
   }
   .photo-frame-tall,
