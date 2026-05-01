@@ -58,6 +58,15 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.text-link {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.text-link:hover {
+  text-decoration-thickness: 2px;
+}
 button,
 input,
 select {

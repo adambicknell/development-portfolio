@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { TagList } from '@/components/cards/TagList';
-import { skillsPageIntro, skillsPageSections } from '@/data/skillsPage';
+import Link from "next/link";
+import { TagList } from "@/components/cards/TagList";
+import { skillsPageIntro, skillsPageSections } from "@/data/skillsPage";
 
 const sectionAnchor = (title: string) =>
   title
     .toLowerCase()
-    .replace(/&/g, '')
-    .replace(/,/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-');
+    .replace(/&/g, "")
+    .replace(/,/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
 
 export function SkillsPageClient() {
   return (
@@ -21,13 +21,20 @@ export function SkillsPageClient() {
             <span className="eyebrow">{skillsPageIntro.eyebrow}</span>
             <h1 className="h1">{skillsPageIntro.title}</h1>
             <p className="lead">{skillsPageIntro.lead}</p>
-            <p>
-              <Link href={skillsPageIntro.azHref}>{skillsPageIntro.azPrompt}</Link>
-            </p>
           </div>
           <div className="card animate-fade-in-right">
             <strong>Capability overview</strong>
-            <p className="muted">15 parent categories aligned to the shared taxonomy for quick scrolling and scanning.</p>
+            <p className="muted">
+              15 parent categories aligned to the shared taxonomy for quick
+              scrolling and scanning.
+            </p>
+            <p>
+              View my full&nbsp;
+              <Link className="text-link" href={skillsPageIntro.azHref}>
+                {skillsPageIntro.azPrompt}
+              </Link>{" "}
+              index.
+            </p>
           </div>
         </div>
 
@@ -53,9 +60,6 @@ export function SkillsPageClient() {
                 <h2>{section.title}</h2>
                 <p className="muted">{section.description}</p>
                 <TagList tags={section.skills} />
-                <p>
-                  <Link href="/skills/a-z">View related skills in the A-Z index</Link>
-                </p>
               </article>
             );
           })}
