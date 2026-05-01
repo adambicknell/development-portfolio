@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { site } from "@/data/site";
+import { FaFlask, FaGithub, FaGitlab, FaHammer, FaStackOverflow } from "react-icons/fa6";
 
 export const metadata = { title: "Contact" };
 
@@ -13,8 +15,8 @@ export default function Page() {
             <h1 className="h1">Contact</h1>
             <p className="lead">
               If you want to connect about portfolio content or technical
-              topics, you can contact me directly by email or through LinkedIn
-              and GitHub.
+              topics, you can contact me directly by email or through LinkedIn,
+              GitHub, GitLab, and StackOverflow.
             </p>
           </div>
 
@@ -51,15 +53,40 @@ export default function Page() {
               notes.
             </p>
           </a>
+
+          <a className="card" href={site.gitlab}>
+            <h2>GitLab</h2>
+            <p className="muted">
+              Additional public repositories, pipelines, and platform-side
+              project history.
+            </p>
+          </a>
+
+          <a className="card" href={site.stackoverflow}>
+            <h2>StackOverflow</h2>
+            <p className="muted">
+              Technical Q&A profile covering practical solutions, debugging, and
+              development discussions.
+            </p>
+          </a>
         </div>
 
         <div className="row" style={{ marginTop: 28 }}>
           <Link className="button primary" href="/case-studies">
-            View case studies
+            <><FaFlask aria-hidden="true" /> Case Studies</>
           </Link>
           <Link className="button" href="/demo-projects">
-            View demo projects
+            <><FaHammer aria-hidden="true" /> Demo Projects</>
           </Link>
+          <a className="button" href={site.github}>
+            <><FaGithub aria-hidden="true" /> GitHub</>
+          </a>
+          <a className="button" href={site.gitlab}>
+            <><FaGitlab aria-hidden="true" /> GitLab</>
+          </a>
+          <a className="button" href={site.stackoverflow}>
+            <><FaStackOverflow aria-hidden="true" /> StackOverflow</>
+          </a>
         </div>
       </div>
     </section>

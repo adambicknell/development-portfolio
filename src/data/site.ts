@@ -6,6 +6,7 @@ export const site = {
   location: 'Southport, UK',
   github: 'https://github.com/adambicknell',
   gitlab: 'https://gitlab.com/adamb-linelab',
+  stackoverflow: 'https://stackoverflow.com/users/2539616/adam',
   linkedin: 'https://www.linkedin.com/in/adamrbicknell',
   description: 'Full Stack React Developer working across React, TypeScript, Python, APIs, cloud systems, secure internal tools, SaaS platforms, and business systems.',
   headline: 'React | TypeScript | Python | APIs | Cloud | Business Systems'

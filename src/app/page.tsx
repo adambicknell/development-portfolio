@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { HomeProofSections } from "@/components/home/HomeProofSections";
 import { site } from "@/data/site";
+import { FaFlask, FaGithub, FaGitlab, FaHammer, FaStackOverflow } from "react-icons/fa6";
 import { JsonLd, personSchema } from "@/lib/schema";
 
 export default function HomePage() {
@@ -66,13 +67,19 @@ export default function HomePage() {
           </div>
           <div className="row" style={{ marginTop: 26 }}>
             <Link className="button" href="/case-studies">
-              View case studies
+              <><FaFlask aria-hidden="true" /> Case Studies</>
             </Link>
             <Link className="button" href="/demo-projects">
-              View demo projects
+              <><FaHammer aria-hidden="true" /> Demo Projects</>
             </Link>
             <a className="button" href={site.github}>
-              Open GitHub
+              <><FaGithub aria-hidden="true" /> GitHub</>
+            </a>
+            <a className="button" href={site.gitlab}>
+              <><FaGitlab aria-hidden="true" /> GitLab</>
+            </a>
+            <a className="button" href={site.stackoverflow}>
+              <><FaStackOverflow aria-hidden="true" /> StackOverflow</>
             </a>
           </div>
         </div>

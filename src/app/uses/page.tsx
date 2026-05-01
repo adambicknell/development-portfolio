@@ -1,5 +1,57 @@
 import Link from 'next/link';
+import { site } from '@/data/site';
+import { FaFlask, FaGithub, FaGitlab, FaHammer, FaStackOverflow } from 'react-icons/fa6';
+
 export const metadata = { title: 'Uses' };
+
 export default function Page() {
-  return <section className="section"><div className="container"><div className="animate-fade-in-left"><span className="eyebrow">Tools and workflow</span><h1 className="h1">Uses</h1><p className="lead">A practical look at the tools, stack, and workflow I use for modern full stack development.</p></div><div className="grid grid-4 section-tight"><div className="card"><h2>Frontend</h2><p className="muted">Next.js, React, TypeScript, Redux Toolkit.</p></div><div className="card"><h2>Backend</h2><p className="muted">Python, FastAPI or Flask, APIs, auth, validation.</p></div><div className="card"><h2>Data</h2><p className="muted">PostgreSQL, migrations, seed data, search, audit logs.</p></div><div className="card"><h2>Delivery</h2><p className="muted">Docker, GitHub Actions, deployment notes, clear READMEs.</p></div></div><div className="row" style={{ marginTop: 28 }}><Link className="button primary" href="/case-studies">View case studies</Link><Link className="button" href="/demo-projects">View demo projects</Link></div></div></section>;
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="animate-fade-in-left">
+          <span className="eyebrow">Tools and workflow</span>
+          <h1 className="h1">Uses</h1>
+          <p className="lead">
+            A practical look at the tools, stack, and workflow I use for modern
+            full stack development.
+          </p>
+        </div>
+        <div className="grid grid-4 section-tight">
+          <div className="card">
+            <h2>Frontend</h2>
+            <p className="muted">Next.js, React, TypeScript, Redux Toolkit.</p>
+          </div>
+          <div className="card">
+            <h2>Backend</h2>
+            <p className="muted">Python, FastAPI or Flask, APIs, auth, validation.</p>
+          </div>
+          <div className="card">
+            <h2>Data</h2>
+            <p className="muted">PostgreSQL, migrations, seed data, search, audit logs.</p>
+          </div>
+          <div className="card">
+            <h2>Delivery</h2>
+            <p className="muted">Docker, GitHub Actions, deployment notes, clear READMEs.</p>
+          </div>
+        </div>
+        <div className="row" style={{ marginTop: 28 }}>
+          <Link className="button primary" href="/case-studies">
+            <><FaFlask aria-hidden="true" /> Case Studies</>
+          </Link>
+          <Link className="button" href="/demo-projects">
+            <><FaHammer aria-hidden="true" /> Demo Projects</>
+          </Link>
+          <a className="button" href={site.github}>
+            <><FaGithub aria-hidden="true" /> GitHub</>
+          </a>
+          <a className="button" href={site.gitlab}>
+            <><FaGitlab aria-hidden="true" /> GitLab</>
+          </a>
+          <a className="button" href={site.stackoverflow}>
+            <><FaStackOverflow aria-hidden="true" /> StackOverflow</>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
 }
