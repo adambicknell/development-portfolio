@@ -151,7 +151,7 @@ button {
   font-size: clamp(1.9rem, 3vw, 3.1rem);
   line-height: 1;
   letter-spacing: -0.05em;
-  margin: 0 0 16px;
+  margin: 12px 0 16px;
 }
 .h3 {
   font-size: 1.25rem;

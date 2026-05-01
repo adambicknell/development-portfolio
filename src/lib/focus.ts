@@ -1,4 +1,5 @@
 import type { CaseStudy } from '@/data/caseStudies';
+import type { ExperienceItem } from '@/data/experience';
 import type { DemoProject } from '@/data/projects';
 import type { SkillGroup } from '@/data/skills';
 import type { FocusOption } from '@/data/site';
@@ -19,5 +20,9 @@ export function filterProjectsByFocus(items: DemoProject[], selectedFocus: Focus
 }
 
 export function filterSkillGroupsByFocus(items: SkillGroup[], selectedFocus: FocusOption | null) {
+  return items.filter((item) => matchesFocus(item.focusAreas, selectedFocus));
+}
+
+export function filterExperienceByFocus(items: ExperienceItem[], selectedFocus: FocusOption | null) {
   return items.filter((item) => matchesFocus(item.focusAreas, selectedFocus));
 }

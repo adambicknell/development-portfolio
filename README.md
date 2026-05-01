@@ -1,8 +1,8 @@
 # Adam Bicknell Developer Portfolio
 
-A Next.js developer portfolio built as a small frontend product rather than a static brochure.
+A complete Next.js portfolio starter built as a small frontend product rather than a static brochure.
 
-The site presents my work as a Full Stack React Developer across React, TypeScript, Python, APIs, cloud systems, secure internal tools, SaaS platforms, modelling platforms, databases, authentication, and production support.
+It positions Adam as a Full Stack React Developer working across React, TypeScript, Python, APIs, cloud systems, secure internal tools, SaaS platforms, modelling platforms, databases, authentication, and production support.
 
 ## Included
 
@@ -26,13 +26,15 @@ Home, About, Case Studies, Case Study Detail, Demo Projects, Demo Project Detail
 
 ## Run locally
 
+```bash
 npm install
 npm run dev
+```
 
-Open http://localhost:3000.
+Open `http://localhost:3000`.
 
 ## Notes
 
-The portfolio site does not use a database. Content lives in files. Database-backed workflows belong in separate public demo projects, where they can be explored without adding unnecessary complexity to this site.
+The portfolio site does not use a database. Content lives in files. Databases belong in the public demo projects where they prove full stack ability.
 
-The CV PDF lives at public/cv/adam-bicknell-cv.pdf.
+Add your real CV PDF at `public/cv/adam-bicknell-cv.pdf`.

@@ -27,7 +27,7 @@ export function SkillsPageClient() {
         <p className="muted">Showing {filteredGroups.length} of {skillGroups.length} skill groups.</p>
         <div className="grid animate-grid-single">
           {filteredGroups.map((group) => (
-            <details className="card" id={group.slug} key={group.slug}>
+            <details className="card" id={group.slug} key={group.slug} open>
               <summary><strong>{group.title}</strong></summary>
               <SectionHeader title="Summary">{group.summary}</SectionHeader>
               <p><strong>Core tools</strong></p>

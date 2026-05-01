@@ -28,7 +28,7 @@ export const projects: DemoProject[] = [
     techStack: ['React','TypeScript','API layer','PostgreSQL','Authentication','File uploads','Testing'],
     decisions: ['Keep permissions explicit','Use seed data','Design for support','Keep the demo realistic but focused'],
     improvements: ['Virus scanning for uploads','Email notifications','Document expiry rules','Stronger observability'],
-    tags: ['Full stack','Auth','Documents','Database','Testing'],
+    tags: ['Full Stack','Authentication','Documents','Database','Testing'],
     focusAreas: ['Full stack','Security/auth','Data','React'],
     relatedCaseStudy: 'secure-client-document-portal',
     diagram: ['User','React UI','Protected routes','API layer','Database','File storage']
@@ -43,7 +43,7 @@ export const projects: DemoProject[] = [
     techStack: ['React','TypeScript','API layer','Database','Role based access','Dashboard UI'],
     decisions: ['Keep AI suggestions human approved','Make workflow states explicit','Track actions for supportability'],
     improvements: ['Notification rules','Team assignment analytics','SLA reporting','More granular permissions'],
-    tags: ['Internal tools','Workflow','Dashboard','AI assisted','Auth'],
+    tags: ['Internal Tools','Workflow','Dashboard','AI Assisted','Authentication'],
     focusAreas: ['Internal tools','Full stack','React','Security/auth'],
     diagram: ['User','Issue intake','Triage rules','Admin dashboard','Status workflow','Metrics']
   },

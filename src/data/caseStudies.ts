@@ -33,7 +33,7 @@ export const caseStudies: CaseStudy[] = [
     outcomes: ['Improved controlled access to sensitive documents','Strengthened authentication and access handling','Reduced risky manual workarounds'],
     improvements: ['Deeper audit visibility','Clearer admin tooling','Structured role based access management'],
     whatThisProves: ['Security-first delivery in regulated workflows','Practical access-control implementation across legacy constraints'],
-    tags: ['Security','Auth','Databases','Production support'],
+    tags: ['Security','Authentication','Databases','Production Support'],
     focusAreas: ['Security/auth','Internal tools','Data'],
     relatedProject: 'client-document-portal-demo',
     diagram: ['User','Authentication','Access checks','Backend logic','Database lookup','Document access']
@@ -52,7 +52,7 @@ export const caseStudies: CaseStudy[] = [
     outcomes: ['Improved internal workflow support','Delivered secure cloud based features','Supported operational visibility and automation'],
     improvements: ['More structured analytics','Reusable component documentation','Expanded admin self-service'],
     whatThisProves: ['Internal tooling that reduces workflow friction','Full-stack delivery with cloud identity integration'],
-    tags: ['React','Redux','Azure','Internal tools','Workflow automation'],
+    tags: ['React','Redux','Azure','Internal Tools','Workflow Automation'],
     focusAreas: ['React','Full stack','Cloud','Internal tools'],
     diagram: ['Staff user','Azure AD','React and Redux UI','API services','Business data','Monitoring']
   },
@@ -70,7 +70,7 @@ export const caseStudies: CaseStudy[] = [
     outcomes: ['Delivered SmartID SSO support','Shipped React TypeScript features','Supported production release processes'],
     improvements: ['More reusable release notes','Extra automated checks around identity flows','More explicit documentation around regional behaviour'],
     whatThisProves: ['SaaS feature delivery in mature release pipelines','Ownership across frontend, backend, data, and support'],
-    tags: ['React','TypeScript','Python','SaaS','SSO','Production support'],
+    tags: ['React','TypeScript','Python','SaaS','SSO','Production Support'],
     focusAreas: ['React','Full stack','SaaS','Security/auth'],
     diagram: ['User','React TypeScript UI','Server-rendered views','Python services','PostgreSQL','Monitoring']
   },
