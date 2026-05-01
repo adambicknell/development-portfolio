@@ -152,7 +152,6 @@ button {
   font-weight: 600;
 }
 
-
 .skills-az-groups {
   grid-template-columns: 1fr;
 }
@@ -198,6 +197,21 @@ button {
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 18px;
+}
+
+.preferences-layout {
+  display: grid;
+  gap: 18px;
+}
+
+.preferences-section {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.preferences-section:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
 }
 .eyebrow {
   color: var(--primary);
@@ -554,6 +568,11 @@ button {
   box-shadow: 0 40px 90px rgba(0, 0, 0, 0.35);
   padding: 20px;
 }
+
+.modal-settings {
+  width: auto;
+}
+
 .skip-link {
   position: absolute;
   top: -100px;

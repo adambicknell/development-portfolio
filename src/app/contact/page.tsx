@@ -1,7 +1,13 @@
 import Image from "next/image";
 import { site } from "@/data/site";
 import { PortfolioLinksRow } from "@/components/PortfolioLinksRow";
-import { FaEnvelope, FaGithub, FaGitlab, FaLinkedin, FaStackOverflow } from "react-icons/fa6";
+import {
+  FaEnvelope,
+  FaGithub,
+  FaGitlab,
+  FaLinkedin,
+  FaStackOverflow,
+} from "react-icons/fa6";
 
 export const metadata = { title: "Contact" };
 
@@ -35,19 +41,25 @@ export default function Page() {
 
         <div className="grid grid-3 section-tight">
           <a className="card" href="mailto:adam@bicknell.uk">
-            <h2><FaEnvelope aria-hidden="true" /> Email</h2>
+            <h2>
+              <FaEnvelope aria-hidden="true" /> Email
+            </h2>
             <p className="muted">adam@bicknell.uk</p>
           </a>
 
           <a className="card" href="https://www.linkedin.com/in/adamrbicknell">
-            <h2><FaLinkedin aria-hidden="true" /> LinkedIn</h2>
+            <h2>
+              <FaLinkedin aria-hidden="true" /> LinkedIn
+            </h2>
             <p className="muted">
               Professional profile, experience, and wider work history.
             </p>
           </a>
 
           <a className="card" href="https://github.com/adambicknell">
-            <h2><FaGithub aria-hidden="true" /> GitHub</h2>
+            <h2>
+              <FaGithub aria-hidden="true" /> GitHub
+            </h2>
             <p className="muted">
               Public portfolio code, demo projects, README files, and technical
               notes.
@@ -55,7 +67,9 @@ export default function Page() {
           </a>
 
           <a className="card" href={site.gitlab}>
-            <h2><FaGitlab aria-hidden="true" /> GitLab</h2>
+            <h2>
+              <FaGitlab aria-hidden="true" /> GitLab
+            </h2>
             <p className="muted">
               Additional public repositories, pipelines, and platform-side
               project history.
@@ -63,7 +77,9 @@ export default function Page() {
           </a>
 
           <a className="card" href={site.stackoverflow}>
-            <h2><FaStackOverflow aria-hidden="true" /> StackOverflow</h2>
+            <h2>
+              <FaStackOverflow aria-hidden="true" /> StackOverflow
+            </h2>
             <p className="muted">
               Technical Q&A profile covering practical solutions, debugging, and
               development discussions.
