@@ -1,7 +1,7 @@
 import type { IconType } from "react-icons";
 import {
   FaBriefcase,
-  FaClock,
+  // FaClock,
   FaEnvelope,
   FaFlask,
   FaGithub,
@@ -9,7 +9,7 @@ import {
   FaHammer,
   FaLinkedin,
   FaRegFileLines,
-  FaScrewdriverWrench,
+  // FaScrewdriverWrench,
   FaRegStar,
   FaStackOverflow,
   FaUser,
@@ -21,8 +21,8 @@ export const navIconMap: Record<string, IconType> = {
   "Demo Projects": FaHammer,
   Experience: FaBriefcase,
   Skills: FaRegStar,
-  Now: FaClock,
-  Uses: FaScrewdriverWrench,
+  // Now: FaClock,
+  // Uses: FaScrewdriverWrench,
   Contact: FaEnvelope,
 };
 

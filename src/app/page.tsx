@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { JsonLd, personSchema } from "@/lib/schema";
 import { PortfolioLinksRow } from "@/components/PortfolioLinksRow";
 import { FaCss3Alt, FaDatabase, FaNodeJs, FaReact } from "react-icons/fa";
@@ -41,18 +42,21 @@ export default function HomePage() {
                   <br />
                   <div className="grid">
                     {[
-                      "React and TypeScript interfaces",
-                      "Python and API systems",
-                      "Cloud deployment",
-                      "Auth and permissions",
-                      "Internal tools and SaaS",
-                      "Production support",
+                      "React and TypeScript",
+                      "Python and APIs",
+                      "Cloud and delivery",
+                      "Auth, data and business systems",
                     ].map((item) => (
                       <div className="card-soft" key={item}>
                         {item}
                       </div>
                     ))}
                   </div>
+                  <p style={{ marginTop: 14 }}>
+                    <Link className="text-link text-center" href="/skills">
+                      View all skills
+                    </Link>
+                  </p>
                 </div>
               </div>
             </aside>

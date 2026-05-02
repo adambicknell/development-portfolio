@@ -3946,12 +3946,6 @@ const rawSkillsDictionary: SkillItem[] = [
     evidenceLevel: "direct-cv",
   },
   {
-    canonicalName: "Kling",
-    aliases: [],
-    primaryCategory: "Generative AI & Automation",
-    evidenceLevel: "self-reported",
-  },
-  {
     canonicalName: "Lambda",
     aliases: ["aws lambda"],
     primaryCategory: "Cloud & Infrastructure",
