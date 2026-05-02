@@ -5674,8 +5674,8 @@ const rawSkillsDictionary: SkillItem[] = [
     evidenceLevel: "direct-cv",
   },
   {
-    canonicalName: "Production SaaS",
-    aliases: [],
+    canonicalName: "Production SaaS platforms",
+    aliases: ["Production SaaS"],
     primaryCategory: "SaaS & Platform",
     evidenceLevel: "direct-cv",
   },
@@ -5687,8 +5687,8 @@ const rawSkillsDictionary: SkillItem[] = [
     evidenceLevel: "direct-cv",
   },
   {
-    canonicalName: "Production-ready Delivery",
-    aliases: [],
+    canonicalName: "Production-ready software delivery",
+    aliases: ["Production-ready Delivery", "Production-ready delivery"],
     primaryCategory: "Full Stack Delivery",
     evidenceLevel: "direct-cv",
   },
@@ -5777,8 +5777,8 @@ const rawSkillsDictionary: SkillItem[] = [
     evidenceLevel: "direct-cv",
   },
   {
-    canonicalName: "Python ML REST API",
-    aliases: [],
+    canonicalName: "Python ML API integration",
+    aliases: ["Python ML REST API"],
     primaryCategory: "Modelling & Numerical Systems",
     secondaryCategories: ["Backend & APIs"],
     evidenceLevel: "direct-cv",

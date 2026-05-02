@@ -16,7 +16,7 @@ export function SkillsPageClient() {
   return (
     <section className="section">
       <div className="container">
-        <div className="space-between">
+        <div className="space-between page-intro-row">
           <div className="animate-fade-in-left">
             <span className="eyebrow">{skillsPageIntro.eyebrow}</span>
             <h1 className="h1">{skillsPageIntro.title}</h1>
@@ -25,7 +25,7 @@ export function SkillsPageClient() {
           <div className="card animate-fade-in-right">
             <strong>Capability overview</strong>
             <p className="muted">
-              15 parent categories aligned to the shared taxonomy for quick
+              Parent categories aligned to the shared taxonomy for quick
               scrolling and scanning.
             </p>
             <p>

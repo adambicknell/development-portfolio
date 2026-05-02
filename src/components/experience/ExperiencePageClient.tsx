@@ -43,7 +43,7 @@ export function ExperiencePageClient() {
   return (
     <section className="section">
       <div className="container">
-        <div className="space-between">
+        <div className="space-between page-intro-row">
           <div className="animate-fade-in-left">
             <span className="eyebrow">Commercial experience</span>
             <h1 className="h1">Experience</h1>

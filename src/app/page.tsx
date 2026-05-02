@@ -11,7 +11,7 @@ export default function HomePage() {
       <JsonLd data={personSchema} />
       <section className="section">
         <div className="container">
-          <div className="hero-home-layout">
+          <div className="hero-home-layout page-intro-row">
             <div className="animate-fade-in-left hero-left-stack">
               <span className="eyebrow">Portfolio</span>
               <h1 className="h1">Full Stack React Developer</h1>

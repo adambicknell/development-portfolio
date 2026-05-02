@@ -73,7 +73,7 @@ const cardSections: AboutCard[][] = [
   [
     {
       title: "Backend and API work",
-      copy: "I have worked across Python, Flask, FastAPI, PHP, Laravel, Lumen, CakePHP, Node.js, REST APIs, SOAP services, authentication endpoints, document access APIs, business rules and integrations between internal and external systems.",
+      copy: "I have worked across Python, Flask, FastAPI, PHP, Laravel, Lumen, CakePHP, Node.js, REST APIs, SOAP services, authentication flows, document access APIs, business rules and integrations between internal and external systems.",
       chips: [
         "Python",
         "Flask",
@@ -103,6 +103,21 @@ const cardSections: AboutCard[][] = [
       title: "Business systems mindset",
       copy: "A lot of my work sits inside real business operations rather than isolated product demos. I have worked on legal document workflows, casting platform features, solver and modelling tools, reporting systems, client portals, internal dashboards, workflow automation and support tooling.",
       link: { href: "/experience", label: "Explore my experience" },
+    },
+
+    {
+      title: "Industry and platform experience",
+      copy: "I have worked across legal technology, HR and workforce-related systems, music technology, film, TV and casting platforms, manufacturing and modelling software, agency websites, client portals and internal business systems. That range has given me experience with different users, workflows, data needs, security concerns and release environments.",
+      chips: [
+        "Legal tech",
+        "HR systems",
+        "Music tech",
+        "Film, TV and casting",
+        "Manufacturing",
+        "Agency work",
+        "Client portals",
+        "Internal systems",
+      ],
     },
   ],
   [
@@ -204,7 +219,7 @@ export default function Page() {
   return (
     <section className="section">
       <div className="container">
-        <div className="profile-hero-layout-two-column">
+        <div className="profile-hero-layout-two-column page-intro-row">
           <div className="animate-fade-in-left" style={{ maxWidth: 760 }}>
             <span className="eyebrow">Professional profile</span>
             <h1 className="h1">About Adam</h1>

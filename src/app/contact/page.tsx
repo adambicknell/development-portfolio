@@ -17,7 +17,7 @@ export default function Page() {
   return (
     <section className="section">
       <div className="container">
-        <div className="profile-hero-layout-two-column">
+        <div className="profile-hero-layout-two-column page-intro-row">
           <div className="animate-fade-in-left" style={{ maxWidth: 760 }}>
             <span className="eyebrow">Get in touch</span>
             <h1 className="h1">Contact</h1>

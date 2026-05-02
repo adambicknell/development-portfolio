@@ -19,7 +19,7 @@ export function SkillsAZPageClient() {
   return (
     <section className="section">
       <div className="container">
-        <div className="space-between">
+        <div className="space-between page-intro-row">
           <div className="animate-fade-in-left">
             <span className="eyebrow">Technical range</span>
             <h1 className="h1">A-Z technical skills index</h1>
