@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { caseStudies } from "@/data/caseStudies";
@@ -65,17 +66,17 @@ export default async function CaseStudyPage({
 
         <div className="hero-grid" style={{ marginTop: 24 }}>
           <article>
-            {item.imagePlaceholder && (
-              <div
-                className="card-soft"
-                style={{
-                  marginBottom: 16,
-                  minHeight: 180,
-                  display: "grid",
-                  placeItems: "center",
-                }}
-              >
-                <p className="muted">{item.imagePlaceholder}</p>
+            {item.image && (
+              <div className="photo-cutout photo-cutout-wide" style={{ marginBottom: 16 }}>
+                <div className="photo-frame photo-frame-wide photo-frame-curved">
+                  <Image
+                    src={item.image}
+                    alt={`${item.title} screenshot`}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 620px"
+                    className="photo-frame-image"
+                  />
+                </div>
               </div>
             )}
             <span className="eyebrow">Anonymised case study</span>

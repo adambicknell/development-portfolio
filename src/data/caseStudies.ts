@@ -16,7 +16,7 @@ export type CaseStudy = {
   focusAreas: string[];
   relatedProject?: string;
   liveUrl?: string;
-  imagePlaceholder?: string;
+  image?: string;
   sections?: { heading: string; content: string }[];
   diagram: string[];
 };
@@ -82,7 +82,7 @@ export const caseStudies: CaseStudy[] = [
       "Elasticsearch",
       "Search",
     ],
-    focusAreas: ["Security/auth", "Full stack", "Cloud", "Data"],
+    focusAreas: ["Security/auth", "Full stack", "Cloud", "Data", "Project Leadership & Delivery"],
     relatedProject: "client-document-portal-demo",
     sections: [
       {
@@ -344,7 +344,8 @@ export const caseStudies: CaseStudy[] = [
           "I worked on a production platform serving users across the US, Canada, UK, and Ireland. Delivery had to respect region-specific rollout expectations while keeping day-to-day product changes moving through established QA and release governance.",
       },
       {
-        heading: "Balancing modern React with established server-rendered views",
+        heading:
+          "Balancing modern React with established server-rendered views",
         content:
           "The platform blended newer React + TypeScript front-end work with legacy Mako-rendered pages. I regularly delivered features across both layers, making pragmatic decisions that improved maintainability and UX without introducing high-risk rewrite behaviour.",
       },
@@ -387,14 +388,21 @@ export const caseStudies: CaseStudy[] = [
     title: "NWPG Digital Hub",
     shortTitle: "NWPG Hub",
     summary:
-      "WordPress-led client website delivery for NWPG with service content architecture and accessible marketing pages.",
+      "End-to-end redesign and build of the NWPG marketing site, focused on local-service discoverability, trust signals, and a maintainable WordPress publishing workflow.",
     context:
-      "A client-facing business website that needed a clearer information architecture, easier content publishing, and a trustworthy professional presentation.",
+      "NWPG needed a practical digital front door for a local property and handyman audience in Preston. The public site had to communicate service breadth clearly, reduce friction for calls/messages, and stay easy to update without developer support each time content changed.",
     problem:
-      "The site needed maintainable page templates, structured service content, and an authoring workflow that non-technical users could manage in WordPress.",
-    role: "Owned implementation and delivery across WordPress setup, theme customisation, page structure, and launch support.",
+      "The experience mixed multiple user intents (urgent repairs, planned home improvements, pricing checks, and credibility checks via reviews), but the original structure made those journeys harder than they needed to be. The project required clearer page hierarchy, faster path-to-contact, and stronger local SEO fundamentals.",
+    role: "I led discovery-to-launch delivery: restructuring information architecture, implementing the WordPress build, shaping the service and pricing content model, and supporting go-live tuning for mobile usability and enquiry conversion.",
     approach:
-      "Used practical content modelling and reusable page sections so the site could scale without custom engineering for every update.",
+      "I treated this as both a UX and operations task. The build used reusable page patterns for service sections, prominent contact CTAs, and consistent trust components (coverage area, assurances, reviews, FAQs) so future edits remained straightforward for non-technical editors.",
+    sections: [
+      {
+        heading: "Highlights",
+        content:
+          "I prioritised three execution tracks in parallel: intent-led navigation for urgent and planned jobs, conversion consistency through repeated call/message prompts, and editor-safe templates so pricing/service updates could be published quickly without fragile one-off page edits.",
+      },
+    ],
     techStack: [
       "WordPress",
       "PHP",
@@ -402,25 +410,33 @@ export const caseStudies: CaseStudy[] = [
       "CSS",
       "SEO",
       "Content strategy",
+      "On-page conversion design",
     ],
     keyDecisions: [
-      "Build around reusable WordPress page patterns",
-      "Prioritise content maintainability for non-technical editors",
-      "Optimise key landing pages for search and conversions",
+      "Designed navigation around high-intent routes: Services, Pricing, FAQ, Reviews, and Contact",
+      "Prioritised phone-first and message-first CTAs for local trade enquiries",
+      "Used reusable WordPress content patterns so service updates did not need code changes",
+      "Standardised local-service copy and metadata to strengthen Preston-area search relevance",
+      "Kept component complexity low to preserve long-term maintainability and handover simplicity",
     ],
     outcomes: [
-      "Delivered a production WordPress client website",
-      "Improved service discoverability and page consistency",
-      "Enabled low-friction editorial updates after handover",
+      "Launched a stable production WordPress platform for NWPG",
+      "Improved service discoverability through clearer structure and stronger navigation signposting",
+      "Reduced contact friction by surfacing phone and contact pathways consistently across key pages",
+      "Enabled reliable self-service content updates post-handover",
+      "Created a better base for future campaigns, service expansion, and proof/testimonial growth",
     ],
     improvements: [
-      "Add structured schema components per service page",
-      "Expand performance budgets for image-heavy content",
-      "Add deeper analytics event tracking for lead funnels",
+      "Add structured data (LocalBusiness + Service schema) across service and pricing pages",
+      "Introduce event-level analytics for click-to-call, form-start, and form-submit conversion funnels",
+      "Extend review ingestion and testimonial layouts to support richer social proof",
+      "Apply tighter image/performance budgets as visual content volume scales",
+      "Add A/B testing on hero messaging and CTA placement for higher lead conversion",
     ],
     whatThisProves: [
-      "Can deliver maintainable WordPress client platforms",
-      "Balances technical delivery with content and business outcomes",
+      "Can deliver practical local-business web platforms that balance trust, discoverability, and conversion",
+      "Strong implementation across WordPress architecture, content operations, and launch hardening",
+      "Able to translate real-world service workflows into clear, maintainable digital journeys",
     ],
     tags: [
       "WordPress",
@@ -432,14 +448,14 @@ export const caseStudies: CaseStudy[] = [
     ],
     focusAreas: ["Full stack", "Internal tools", "Data"],
     liveUrl: "https://www.nwpg.uk/",
-    imagePlaceholder: "Add NWPG case-study screenshot here",
+    image: "/nwpg.jpg",
     diagram: [
       "Visitor",
-      "Landing page",
-      "WordPress templates",
-      "Content modules",
-      "SEO metadata",
-      "Enquiry flow",
+      "High-intent service/pricing path",
+      "WordPress page templates",
+      "Reusable trust + service modules",
+      "Local SEO metadata",
+      "Phone + message enquiry conversion",
     ],
   },
   {
@@ -447,14 +463,21 @@ export const caseStudies: CaseStudy[] = [
     title: "Bicknell Digital Platform",
     shortTitle: "Bicknell Digital",
     summary:
-      "Business website platform for Bicknell Digital on WordPress, focused on service packaging, content publishing, and conversion paths.",
+      "Multi-service WordPress platform for Bicknell Digital, designed to unify digital and publishing offers, support high-frequency content updates, and create clearer quote-generation pathways.",
     context:
-      "A commercial website representing digital and publishing services that required rapid iteration and owner-managed updates.",
+      "Bicknell Digital spans two distinct commercial domains (digital services and publishing services), each with separate customer journeys and content depth. The platform needed to present both clearly under one brand while preserving editorial speed and operational control.",
     problem:
-      "The platform needed clear service taxonomy, reusable marketing sections, and reliable publishing workflows without developer bottlenecks.",
-    role: "Designed and implemented the platform structure, service-page flow, and WordPress editing model.",
+      "The previous shape made service discovery and internal content management harder than necessary. The rebuild had to improve taxonomy, reduce cognitive load in navigation, and support frequent additions across services, posts, and promotional content without recurring engineering overhead.",
+    role: "I designed and implemented the site architecture, WordPress content model, service hierarchy, navigation structure, and conversion-oriented page layouts, then iterated post-launch as offerings evolved.",
     approach:
-      "Applied a service-led information architecture with reusable components and conversion-focused page structure.",
+      "I used a service-led IA with clear top-level separation between Digital and Publishing, reusable section patterns, and consistent quote/contact prompts. The delivery model prioritised editor autonomy, allowing rapid launch of new service pages and content campaigns.",
+    sections: [
+      {
+        heading: "Highlights",
+        content:
+          "The implementation focused on reducing decision friction for visitors while reducing publishing friction for the business: clearer route choice between service domains, reusable landing-page structures for fast offer rollout, and quote pathways that stayed predictable across the whole site.",
+      },
+    ],
     techStack: [
       "WordPress",
       "WooCommerce",
@@ -462,25 +485,34 @@ export const caseStudies: CaseStudy[] = [
       "JavaScript",
       "CSS",
       "Analytics",
+      "SEO",
+      "Content operations",
     ],
     keyDecisions: [
-      "Use WordPress for editorial speed",
-      "Keep service sections modular and reusable",
-      "Design around quote/contact conversion journeys",
+      "Split navigation around two primary commercial pillars: Digital and Publishing",
+      "Implemented reusable page sections to speed up new service-page creation",
+      "Established consistent quote capture patterns across key landing pages",
+      "Designed taxonomy and menu structure to reduce click depth for core offerings",
+      "Built for iterative publishing, including news content and product/service updates",
     ],
     outcomes: [
-      "Launched a production business website",
-      "Improved clarity of digital and publishing offerings",
-      "Enabled ongoing in-house content updates",
+      "Launched a production business platform with clearer service positioning",
+      "Improved user understanding of digital vs publishing offer sets",
+      "Enabled ongoing in-house publishing without developer dependency",
+      "Provided scalable structure for content marketing and offer expansion",
+      "Created stronger conversion continuity from service discovery to quote request",
     ],
     improvements: [
-      "Add deeper CRM integration for lead capture",
-      "Expand structured internal linking strategy",
-      "Increase template-level Core Web Vitals tuning",
+      "Integrate CRM pipeline stages directly with quote/form submissions",
+      "Expand structured internal linking between related services and supporting articles",
+      "Improve Core Web Vitals through template-level asset strategy and media controls",
+      "Add richer attribution tracking to identify highest-converting service pathways",
+      "Evolve conversion UX with segmented lead forms by intent and budget profile",
     ],
     whatThisProves: [
-      "Can build and operate commercial WordPress platforms",
-      "Strong delivery across UX, CMS architecture, and content ops",
+      "Can design and run multi-domain commercial websites with clear information architecture",
+      "Strong execution across CMS strategy, conversion UX, and long-term content operations",
+      "Comfortable balancing brand presentation, technical maintainability, and business outcomes",
     ],
     tags: [
       "WordPress",
@@ -492,14 +524,14 @@ export const caseStudies: CaseStudy[] = [
     ],
     focusAreas: ["Full stack", "Data", "Internal tools"],
     liveUrl: "https://digital.bicknell.uk/",
-    imagePlaceholder: "Add Bicknell Digital homepage screenshot here",
+    image: "/bicknell-digital.jpg",
     diagram: [
       "Visitor",
-      "Service page",
-      "WordPress content blocks",
-      "Lead form",
-      "Newsletter/CRM",
-      "Reporting",
+      "Digital/Publishing route selection",
+      "Service detail templates",
+      "WordPress reusable content blocks",
+      "Quote + newsletter conversion points",
+      "Content + analytics feedback loop",
     ],
   },
   {
@@ -507,14 +539,21 @@ export const caseStudies: CaseStudy[] = [
     title: "Petition Map",
     shortTitle: "Petition Map",
     summary:
-      "Interactive geospatial web app visualising petition-related datasets with GeoJSON, map layers, and location-based exploration.",
+      "A hobby geospatial experiment built to explore GeoJSON modelling and Leaflet.js deeply, turning petition data into an interactive, map-first exploration tool.",
     context:
-      "A public-facing map product designed to make geographic petition signals easier to explore than in raw tables or lists.",
+      "This was a self-directed side project rather than client work. The goal was to learn geospatial frontend architecture in depth by building a usable public map interface for petition data, not just a static demo.",
     problem:
-      "Users needed an intuitive way to interpret regional petition patterns, requiring map interaction, data processing, and performant rendering.",
-    role: "Built the mapping experience and data pipeline, including GeoJSON handling, layer logic, and frontend interaction patterns.",
+      "Raw petition datasets are difficult to reason about geographically. I needed a way to transform tabular/location-linked data into an interactive experience that supports spatial comparison, discovery, and lightweight analysis while running smoothly in-browser.",
+    role: "I built the project end-to-end: data shaping decisions, GeoJSON preparation, Leaflet layer implementation, interaction design, and responsive behaviour tuning for desktop and mobile map usage.",
     approach:
-      "Modelled data for map-first exploration, then implemented layer controls, geographic boundaries, and queryable point/area views.",
+      "I approached it as a learning laboratory for geospatial web engineering: normalise location-linked records, represent them in GeoJSON structures, render boundaries/points with Leaflet, and iterate on interaction patterns (popups, zoom behaviour, layer toggles) until exploration felt intuitive.",
+    sections: [
+      {
+        heading: "Highlights",
+        content:
+          "I worked in tight data-to-UI loops: clean and reshape petition records, test geometry correctness in GeoJSON, profile map rendering behaviour, and refine interaction affordances so users could quickly understand spatial differences without specialist GIS knowledge.",
+      },
+    ],
     techStack: [
       "JavaScript",
       "GeoJSON",
@@ -522,25 +561,34 @@ export const caseStudies: CaseStudy[] = [
       "Data processing",
       "API integration",
       "Responsive UI",
+      "Geospatial UX",
     ],
     keyDecisions: [
       "Use GeoJSON as the interchange format",
-      "Optimise geometry and properties for browser rendering",
-      "Expose filters and tooltips for exploratory analysis",
+      "Keep data structures explicit so geometry and metadata remain easy to inspect and debug",
+      "Optimise feature payloads to improve browser render performance",
+      "Use Leaflet layer strategy that supports iterative feature growth",
+      "Design interactions for exploration first (hover/click context, zoom-to-area, and readable labels)",
+      "Treat the project as a reusable baseline for future civic/geospatial experiments",
     ],
     outcomes: [
-      "Delivered a working interactive petition map",
-      "Improved interpretability of geographically distributed data",
-      "Created a reusable baseline for future civic-data maps",
+      "Delivered a live interactive petition map as a functional public demo",
+      "Built stronger practical understanding of GeoJSON structures and Leaflet internals",
+      "Improved the readability of geographically distributed petition patterns compared with flat data views",
+      "Established a reusable technical foundation for future map-based side projects",
+      "Validated a full data-to-visual interface workflow in a solo experimental setting",
     ],
     improvements: [
-      "Introduce tile/vector caching for larger datasets",
-      "Add temporal filtering and playback",
-      "Add automated data validation before publish",
+      "Add richer filter controls (region, threshold, and category views)",
+      "Introduce temporal playback to inspect change over time where data allows",
+      "Expand dataset validation and transformation automation before publish",
+      "Evaluate vector-tile or clustering approaches for larger-scale datasets",
+      "Add richer explanatory overlays for non-technical users interpreting map patterns",
     ],
     whatThisProves: [
-      "Can ship geospatial products with production-ready UX",
-      "Strong data-to-visualisation workflow design",
+      "Can self-direct advanced technical learning through a complete shipped side project",
+      "Strong grasp of data-to-map transformation and interactive geospatial UX fundamentals",
+      "Able to convert exploratory prototypes into polished, publicly accessible web experiences",
     ],
     tags: [
       "Geospatial",
@@ -552,7 +600,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     focusAreas: ["Data", "Full stack", "Internal tools"],
     liveUrl: "https://petition-map.bicknell.uk/",
-    imagePlaceholder: "Add Petition Map screenshot here",
+    image: "/petition-map.jpg",
     diagram: [
       "User",
       "Map UI",
@@ -567,51 +615,118 @@ export const caseStudies: CaseStudy[] = [
     title: "Solver and Modelling Platform",
     shortTitle: "Solver Platform",
     summary:
-      "A proprietary platform involving Python backend services, Electron client delivery, Azure infrastructure, Terraform, licensing, and private cloud deployment.",
+      "A proprietary production-modelling platform combining optimisation solvers, protected desktop delivery, and Azure-backed deployment workflows used by major international engineering and manufacturing organisations.",
     context:
-      "A technical platform where backend modelling logic, desktop delivery, licensing, cloud infrastructure, and customer deployment constraints all connected.",
+      "I worked on a commercial modelling product focused on production-system modelling, throughput/capacity trade studies, and optimisation-driven decision support. Delivery spanned solver-backed Python services, licensing and IP protection, desktop packaging, and customer-specific cloud deployment constraints, with day-to-day delivery through GitLab branches, merge requests, and review workflows.",
     problem:
-      "Users needed controlled access to complex modelling capability while protecting intellectual property and supporting customer-managed deployments.",
-    role: "Worked across Python backend services, Electron client delivery, installer flows, Azure infrastructure, Terraform, licensing, testing, and deployment discussions.",
+      "Customers needed to run high-value modelling and optimisation workflows securely in environments they controlled, while still getting reliable releases, clear licence enforcement, and consistent solver behaviour across local development, hosted services, and restricted private-cloud contexts.",
+    role: "I owned backend-heavy delivery across Python APIs, solver integration, build/test/deploy automation, and cloud execution paths. I led a major refactor across API and modelling layers, including factory-based patterns to improve composability and testability. I contributed to Electron-client integration where needed, but my core impact was around modelling services, licensing flows, and production-grade deployment reliability.",
     approach:
-      "Connected backend services, client delivery, infrastructure, licensing, and platform constraints into a controlled delivery model.",
+      "I treated the platform as one connected system: model formulation and solver execution (GPkit/CVXOPT/MOSEK), secure runtime licensing (Thales Sentinel SDK, RTE, ScriptEnvelope, V2C/ACC patterns), automated quality gates, and repeatable Azure infrastructure. I focused on reducing operational friction while preserving IP protection and deterministic analytical outputs.",
     techStack: [
       "Python",
       "Flask",
+      "GPkit",
+      "CVXOPT",
+      "MOSEK",
       "Electron",
       "Node.js",
-      "Azure",
+      "Thales Sentinel SDK",
+      "Azure Container Apps",
+      "Azure Container Registry",
       "Terraform",
-      "MySQL",
+      "Docker",
+      "GitLab",
+      "mypy",
+      "flake8",
+      "isort",
+      "black",
+      "Prettier",
+      "Paver/Pavement",
+      "Factory patterns",
     ],
     keyDecisions: [
-      "Protect IP through licensing",
-      "Support customer managed deployment",
-      "Make infrastructure repeatable with Terraform",
+      "Use solver-layer separation so GPkit model definitions, CVXOPT pathways, and MOSEK-backed optimisation runs stayed testable and swappable",
+      "Implement licensing as a first-class runtime concern using Sentinel SDK capabilities (including RTE and ScriptEnvelope) to protect commercial IP",
+      "Standardise local and CI execution with Docker-backed build and test scripts to reduce environment drift",
+      "Use Terraform-managed Azure foundations (including container image workflows) for repeatable customer-targeted deployments",
+      "Prioritise deploy scripts and validation checks so restricted/private-cloud rollouts remained predictable under NDA constraints",
+      "Keep backend contracts stable for Electron integration while allowing deeper solver and model refactors behind the API",
     ],
     outcomes: [
-      "Delivered Azure infrastructure",
-      "Supported controlled private cloud execution",
-      "Improved backend quality checks",
+      "Improved confidence in solver-backed API behaviour through stronger automated tests around modelling and optimisation flows",
+      "Reduced release friction by introducing and hardening build/deploy scripting for containerised Azure paths",
+      "Strengthened software protection and entitlement control with production licensing workflows",
+      "Supported customer-managed and restricted-cloud deployment scenarios without exposing core modelling IP",
+      "Enabled complex modelling work to be consumed in a practical product workflow rather than remaining a research-only capability",
+      "Contributed to a platform used by major international companies making high-cost production and scale-up decisions",
     ],
     improvements: [
-      "More self-service deployment diagnostics",
-      "Expanded architecture documentation",
-      "Richer platform observability",
+      "Expand solver diagnostics surfaced to users when optimisation constraints are infeasible or under-specified",
+      "Add deeper telemetry across solve time, licence handshakes, and deployment lifecycle events",
+      "Increase self-service environment verification tooling for customer-hosted installs",
     ],
     whatThisProves: [
-      "Platform engineering across app + infra boundaries",
-      "Secure commercial product delivery in private-cloud contexts",
+      "Can productionise advanced optimisation and modelling technology, not just build CRUD applications",
+      "Can operate confidently across backend engineering, licensing security, and cloud deployment automation",
     ],
-    tags: ["Python", "Flask", "Electron", "Azure", "Terraform", "Licensing"],
-    focusAreas: ["Python/API", "Cloud", "Full stack", "Data"],
+    tags: [
+      "Python",
+      "Flask",
+      "GPkit",
+      "CVXOPT",
+      "MOSEK",
+      "Thales Sentinel SDK",
+      "Azure",
+      "Terraform",
+      "Docker",
+      "GitLab",
+      "mypy",
+      "flake8",
+      "isort",
+      "black",
+      "Prettier",
+      "Paver/Pavement",
+      "Factory patterns",
+    ],
+    focusAreas: [
+      "Modelling & Numerical Systems",
+      "Backend & APIs",
+      "Cloud & Infrastructure",
+      "DevOps, Testing & Delivery",
+    ],
+    sections: [
+      {
+        heading: "Product context",
+        content:
+          "The company delivers production-modelling and optimisation capability used to evaluate throughput, capacity, cost, and risk trade-offs in complex manufacturing/system design decisions. My work focused on making that analytical core reliable, protected, and deployable in real customer environments.",
+      },
+      {
+        heading: "Solver and model execution engineering",
+        content:
+          "I worked deeply in Python services that orchestrated model inputs, constraint handling, and optimisation runs using GPkit/CVXOPT/MOSEK pathways. This included refactoring model and API code for readability and testability, and tightening behaviour around solver outputs and validation logic.",
+      },
+      {
+        heading: "Licensing, protection, and controlled runtime",
+        content:
+          "Commercial delivery required robust entitlement controls, so licensing was treated as part of system architecture rather than an afterthought. I worked across Sentinel-based runtime and packaging concerns (including RTE and ScriptEnvelope patterns), plus customer provisioning flows such as V2C/ACC for pooled and controlled licence usage.",
+      },
+      {
+        heading: "Deployment and delivery at platform depth",
+        content:
+          "Beyond application code, I built and maintained build/test/deploy scripts and infrastructure paths for Azure compute and image-based releases, with Docker for local consistency and Terraform for repeatable environments. This supported customer-managed deployments, including restricted private-cloud contexts, without sacrificing release discipline.",
+      },
+    ],
     diagram: [
-      "Desktop client",
-      "Licence check",
-      "Python Flask backend",
-      "Solver logic",
-      "Azure Container Apps",
-      "Database and storage",
+      "Custom or Terraform deployment",
+      "Azure compute + container image registry",
+      "Docker build/runtime parity",
+      "Customer-managed/private-cloud execution",
+      "Electron desktop workflow",
+      "Licence enforcement (Sentinel)",
+      "Python + Flask API layer",
+      "GPkit/CVXOPT/MOSEK solver paths",
+      "Model validation + automated tests",
     ],
   },
 ];

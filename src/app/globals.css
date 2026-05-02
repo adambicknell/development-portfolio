@@ -353,6 +353,18 @@ button {
   margin-bottom: 36px;
 }
 
+
+.case-studies-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 24px;
+}
+
+.case-studies-hero-layout > .card {
+  height: 100%;
+}
+
 .profile-hero-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(240px, 320px) minmax(0, 420px);
@@ -835,7 +847,8 @@ html[data-reduced-motion="true"] .card {
   .profile-hero-layout,
   .profile-hero-layout-two-column,
   .hero-grid,
-  .hero-home-layout {
+  .hero-home-layout,
+  .case-studies-hero-layout {
     grid-template-columns: 1fr;
   }
   .case-study-narrative {
