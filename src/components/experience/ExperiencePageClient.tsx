@@ -126,7 +126,7 @@ export function ExperiencePageClient() {
                 ) : null}
                 {item.portfolioAngles?.length ? (
                   <>
-                    <h3>Key highlights</h3>
+                    <h3>Experience themes</h3>
                     <ul>
                       {item.portfolioAngles.map((angle) => (
                         <li key={angle}>{angle}</li>

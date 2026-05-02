@@ -20,9 +20,14 @@ export default function Page() {
             <span className="eyebrow">Get in touch</span>
             <h1 className="h1">Contact</h1>
             <p className="lead">
-              If you want to connect about portfolio content or technical
-              topics, you can contact me directly by email or through LinkedIn,
-              GitHub, GitLab, and StackOverflow.
+              If you want to connect about my portfolio, technical work,
+              freelance projects, you can contact me directly by email or
+              through LinkedIn.
+            </p>
+            <p className="lead">
+              I’m open to conversations around full stack React apps, React plus
+              Python systems, internal tools, SaaS platforms, cloud based
+              applications and practical business software.
             </p>
           </div>
 
