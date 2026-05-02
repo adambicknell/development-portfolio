@@ -1,22 +1,16 @@
 "use client";
+
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { experience } from "@/data/experience";
 import { TagList } from "@/components/cards/TagList";
 import { SharedTaxonomyFilters } from "@/components/common/SharedTaxonomyFilters";
-import {
-  filterItems,
-  groupedSkills,
-  type FilterableItem,
-} from "@/lib/taxonomy";
+import { filterItems, type FilterableItem } from "@/lib/taxonomy";
 import type { ParentFilter } from "@/data/taxonomy";
-
-const skills = groupedSkills();
 
 export function ExperiencePageClient() {
   const [query, setQuery] = useState("");
   const [parent, setParent] = useState<string | null>(null);
-  const [skill, setSkill] = useState<string | null>(null);
 
   const items = experience.map((e) => ({
     ...e,
@@ -36,8 +30,8 @@ export function ExperiencePageClient() {
   })) as ((typeof experience)[number] & FilterableItem)[];
 
   const filtered = useMemo(
-    () => filterItems(items, parent as ParentFilter | null, skill, query),
-    [items, parent, skill, query],
+    () => filterItems(items, parent as ParentFilter | null, null, query),
+    [items, parent, query],
   );
 
   return (
@@ -54,6 +48,7 @@ export function ExperiencePageClient() {
               support.
             </p>
           </div>
+
           <div className="card animate-fade-in-right">
             <strong>Experience snapshot</strong>
             <p className="muted">
@@ -67,18 +62,32 @@ export function ExperiencePageClient() {
             </p>
           </div>
         </div>
+
+        <div className="card filter-search-card">
+          <label className="field">
+            <span>Search experience</span>
+            <input
+              type="search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Search by role, company, skill, platform, or delivery theme"
+            />
+          </label>
+        </div>
+
         <SharedTaxonomyFilters
-          query={query}
-          onQueryChange={setQuery}
           selectedParent={parent}
           onParentChange={setParent}
-          selectedSkill={skill}
-          onSkillChange={setSkill}
-          groupedSkills={skills}
+          onClear={() => {
+            setQuery("");
+            setParent(null);
+          }}
         />
+
         <p className="muted">
           Showing {filtered.length} of {experience.length} experience entries.
         </p>
+
         <div className="grid animate-grid-single experience-groups">
           {filtered.map((item) => (
             <article
@@ -97,13 +106,16 @@ export function ExperiencePageClient() {
                     </p>
                   ) : null}
                 </summary>
+
                 <p className="muted">{item.summary}</p>
+
                 <h3>What I worked on</h3>
                 <ul>
                   {item.responsibilities.map((responsibility) => (
                     <li key={responsibility}>{responsibility}</li>
                   ))}
                 </ul>
+
                 {item.technicalDetails?.length ? (
                   <>
                     <h3>Technical detail</h3>
@@ -114,6 +126,7 @@ export function ExperiencePageClient() {
                     </ul>
                   </>
                 ) : null}
+
                 {item.outcomes.length ? (
                   <>
                     <h3>Delivery and support</h3>
@@ -124,6 +137,7 @@ export function ExperiencePageClient() {
                     </ul>
                   </>
                 ) : null}
+
                 {item.portfolioAngles?.length ? (
                   <>
                     <h3>Experience themes</h3>
@@ -134,6 +148,7 @@ export function ExperiencePageClient() {
                     </ul>
                   </>
                 ) : null}
+
                 <TagList tags={item.techStack} />
               </details>
             </article>
