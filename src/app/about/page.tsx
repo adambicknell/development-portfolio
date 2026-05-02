@@ -262,7 +262,7 @@ export default function Page() {
                 />
               </div>
             </div>
-            <aside className="card" style={{ marginTop: 18 }}>
+            <aside className="card about-card" style={{ marginTop: 18 }}>
               <h2>What I do</h2>
               <p className="muted">
                 I work across full stack React, TypeScript, Python, APIs,
@@ -305,7 +305,7 @@ export default function Page() {
               key={sectionIndex}
             >
               {section.map((card) => (
-                <article className="card" key={card.title}>
+                <article className="card about-card" key={card.title}>
                   <h2>{card.title}</h2>
                   <p className="muted">{card.copy}</p>
                   {card.chips?.length ? (
@@ -331,7 +331,7 @@ export default function Page() {
         </div>
 
         <div className="about-full-width-cards">
-          <div className="card section-tight">
+          <div className="card section-tight about-card">
             <h2>Favourite technologies</h2>
             <p className="muted">
               These are the technologies I reach for most often in day-to-day
@@ -347,7 +347,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="card section-tight">
+          <div className="card section-tight about-card">
             <h2>What I am working on now</h2>
             <p className="muted">
               I am focused on practical demos, clear documentation and
@@ -363,14 +363,14 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="card section-tight">
+          <div className="card section-tight about-card">
             <h2>Where this portfolio fits</h2>
             <p className="muted">
-              This portfolio is designed to show the parts of my work that are
-              usually hidden inside private company systems. It brings together
-              public demos, anonymised case studies, a detailed experience
-              timeline and a technical skills index so recruiters and hiring
-              managers can see the kind of systems I have built, supported and
+              This portfolio brings together work delivered through Bicknell
+              Digital alongside selected examples from private company systems,
+              including public demos, anonymised case studies, a detailed
+              experience timeline and a technical skills index. It is designed
+              to clearly show the kinds of systems I have built, supported and
               improved.
             </p>
             <div className="row">

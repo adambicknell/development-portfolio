@@ -118,6 +118,22 @@ button {
   padding: 0;
 }
 
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.about-card > h2,
+.about-card > p {
+  margin: 0;
+}
+
+.about-card > :last-child {
+  margin-bottom: 0;
+}
+
 .about-full-width-cards {
   display: grid;
   gap: 20px;
