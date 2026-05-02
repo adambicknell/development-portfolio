@@ -1,12 +1,12 @@
-import Link from 'next/link';
-import { navItems, site } from '@/data/site';
-import { navIconMap, socialIconMap } from '@/data/navIcons';
+import Link from "next/link";
+import { navItems, site } from "@/data/site";
+import { navIconMap, socialIconMap } from "@/data/navIcons";
 
 const socialLinks = [
-  { href: `mailto:${site.email}`, label: 'Email', icon: socialIconMap.Email },
-  { href: site.github, label: 'GitHub', icon: socialIconMap.GitHub },
-  { href: site.gitlab, label: 'GitLab', icon: socialIconMap.GitLab },
-  { href: site.linkedin, label: 'LinkedIn', icon: socialIconMap.LinkedIn },
+  { href: `mailto:${site.email}`, label: "Email", icon: socialIconMap.Email },
+  { href: site.github, label: "GitHub", icon: socialIconMap.GitHub },
+  { href: site.gitlab, label: "GitLab", icon: socialIconMap.GitLab },
+  { href: site.linkedin, label: "LinkedIn", icon: socialIconMap.LinkedIn },
 ] as const;
 
 export function Footer() {
@@ -16,13 +16,22 @@ export function Footer() {
         <div>
           <strong>{site.name}</strong>
           <p className="muted">{site.role}</p>
-          <p className="muted">{site.headline}</p>
+          <p className="muted">
+            Most of my commercial work has been private company software, so
+            this portfolio uses anonymised case studies, selected public demos,
+            and freelance client work delivered through Bicknell Digital to show
+            how I approach real systems.
+          </p>
         </div>
         <div className="grid">
           {navItems.slice(0, 5).map((item) => {
             const Icon = navIconMap[item.label];
             return (
-              <Link key={item.href} href={item.href} className="footer-icon-link">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="footer-icon-link"
+              >
                 {Icon ? <Icon aria-hidden="true" /> : null}
                 <span>{item.label}</span>
               </Link>

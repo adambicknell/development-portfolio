@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <section className="section">
       <div className="container">
-        <div className="profile-hero-layout">
+        <div className="profile-hero-layout-two-column">
           <div className="animate-fade-in-left" style={{ maxWidth: 760 }}>
             <span className="eyebrow">Professional profile</span>
             <h1 className="h1">About Adam</h1>
@@ -32,11 +32,6 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <aside className="card animate-fade-in-right">
-            <span className="badge">Approach</span>
-            <h2>Outcome-focused engineering</h2>
-            <p className="muted">I turn complex business requirements into reliable products with readable code, strong UX, and maintainable systems.</p>
-          </aside>
         </div>
 
         <div className="grid grid-3 section-tight">

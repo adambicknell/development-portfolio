@@ -20,11 +20,6 @@ export default function HomePage() {
                 modelling platforms, secure internal systems, and cloud based
                 applications.
               </p>
-              <p className="muted">
-                Most of my commercial work has been private company software, so
-                this portfolio uses anonymised case studies and selected public
-                demos to show how I approach real systems.
-              </p>
             </div>
             <div className="animate-fade-in-up">
               <div className="photo-cutout photo-cutout-tall">
@@ -42,10 +37,8 @@ export default function HomePage() {
             <aside className="animate-fade-in-right">
               <div className="section-tight">
                 <div className="card">
-                  <span className="eyebrow">At a glance</span>
-                  <h2 className="h3">
-                    React | TypeScript | Python | APIs | Cloud
-                  </h2>
+                  <div className="eyebrow">At a glance</div>
+                  <br />
                   <div className="grid">
                     {[
                       "React and TypeScript interfaces",
