@@ -28,6 +28,7 @@ const favouriteTechnologies = [
   "FastAPI",
   "Flask",
   "Docker",
+  "WordPress",
 ];
 
 const nowItems = [
