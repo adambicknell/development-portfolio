@@ -63,18 +63,6 @@ export function ExperiencePageClient() {
           </div>
         </div>
 
-        <div className="card filter-search-card">
-          <label className="field">
-            <span>Search experience</span>
-            <input
-              type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search by role, company, skill, platform, or delivery theme"
-            />
-          </label>
-        </div>
-
         <SharedTaxonomyFilters
           selectedParent={parent}
           onParentChange={setParent}
