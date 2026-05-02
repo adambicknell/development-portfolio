@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { site } from "@/data/site";
 import { PortfolioLinksRow } from "@/components/PortfolioLinksRow";
 import {
@@ -6,6 +7,7 @@ import {
   FaGithub,
   FaGitlab,
   FaLinkedin,
+  FaRegFileLines,
   FaStackOverflow,
 } from "react-icons/fa6";
 
@@ -68,8 +70,7 @@ export default function Page() {
               <FaGithub aria-hidden="true" /> GitHub
             </h2>
             <p className="muted">
-              Public portfolio code, demo projects, README files, and technical
-              notes.
+              Public portfolio code, demo projects, and practical implementation examples.
             </p>
           </a>
 
@@ -78,8 +79,7 @@ export default function Page() {
               <FaGitlab aria-hidden="true" /> GitLab
             </h2>
             <p className="muted">
-              Additional public repositories, pipelines, and platform-side
-              project history.
+              The version control platform I use in my current role, with active commit history and day-to-day workflow context.
             </p>
           </a>
 
@@ -88,10 +88,18 @@ export default function Page() {
               <FaStackOverflow aria-hidden="true" /> StackOverflow
             </h2>
             <p className="muted">
-              Technical Q&A profile covering practical solutions, debugging, and
-              development discussions.
+              My StackOverflow profile, showing my community contribution history and broader developer background.
             </p>
           </a>
+
+          <Link className="card" href="/cv">
+            <h2>
+              <FaRegFileLines aria-hidden="true" /> CV
+            </h2>
+            <p className="muted">
+              View my CV for a concise summary of experience, skills, and project delivery across roles.
+            </p>
+          </Link>
         </div>
 
         <PortfolioLinksRow highlightCaseStudies />
