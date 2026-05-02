@@ -51,7 +51,10 @@ export function Footer() {
           {(() => {
             const CvIcon = socialIconMap.CV;
             return (
-              <Link href="/cv" className="footer-icon-link">
+              <Link
+                href="/cv/adam-bicknell-cv.pdf"
+                className="footer-icon-link"
+              >
                 <CvIcon aria-hidden="true" />
                 <span>CV</span>
               </Link>

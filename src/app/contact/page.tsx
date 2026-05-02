@@ -70,7 +70,8 @@ export default function Page() {
               <FaGithub aria-hidden="true" /> GitHub
             </h2>
             <p className="muted">
-              Public portfolio code, demo projects, and practical implementation examples.
+              Public portfolio code, demo projects, and practical implementation
+              examples.
             </p>
           </a>
 
@@ -79,7 +80,8 @@ export default function Page() {
               <FaGitlab aria-hidden="true" /> GitLab
             </h2>
             <p className="muted">
-              The version control platform I use in my current role, with active commit history and day-to-day workflow context.
+              The version control platform I use in my current role, with active
+              commit history and day-to-day workflow context.
             </p>
           </a>
 
@@ -88,16 +90,18 @@ export default function Page() {
               <FaStackOverflow aria-hidden="true" /> StackOverflow
             </h2>
             <p className="muted">
-              My StackOverflow profile, showing my community contribution history and broader developer background.
+              My StackOverflow profile, showing my community contribution
+              history and broader developer background.
             </p>
           </a>
 
-          <Link className="card" href="/cv">
+          <Link className="card" href="/cv/adam-bicknell-cv.pdf">
             <h2>
               <FaRegFileLines aria-hidden="true" /> CV
             </h2>
             <p className="muted">
-              View my CV for a concise summary of experience, skills, and project delivery across roles.
+              View my CV for a concise summary of experience, skills, and
+              project delivery across roles.
             </p>
           </Link>
         </div>
