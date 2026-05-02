@@ -258,6 +258,13 @@ button {
   justify-content: space-between;
   gap: 20px;
 }
+
+.profile-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px) minmax(0, 420px);
+  align-items: center;
+  gap: 20px;
+}
 .button {
   display: inline-flex;
   align-items: center;
@@ -670,6 +677,7 @@ html[data-reduced-motion="true"] .card {
   .grid-2,
   .grid-3,
   .grid-4,
+  .profile-hero-layout,
   .hero-grid,
   .hero-home-layout {
     grid-template-columns: 1fr;

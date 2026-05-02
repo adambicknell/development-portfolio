@@ -7,14 +7,23 @@ export default function Page() {
   return (
     <section className="section">
       <div className="container">
-        <div className="animate-fade-in-left">
-          <span className="eyebrow">Tools and workflow</span>
-          <h1 className="h1">Uses</h1>
-          <p className="lead">
-            A practical look at the tools, stack, and workflow I use for modern
-            full stack development.
-          </p>
+        <div className="hero-grid">
+          <div className="animate-fade-in-left">
+            <span className="eyebrow">Tools and workflow</span>
+            <h1 className="h1">Uses</h1>
+            <p className="lead">
+              A practical look at the tools, stack, and workflow I use for modern
+              full stack development.
+            </p>
+          </div>
+
+          <aside className="card animate-fade-in-right" style={{ maxWidth: 360 }}>
+            <span className="badge">Workflow</span>
+            <h2>Built for delivery</h2>
+            <p className="muted">I prioritize maintainability, sensible defaults, and documentation so projects can be shipped and supported confidently.</p>
+          </aside>
         </div>
+
         <div className="grid grid-4 section-tight">
           <div className="card">
             <h2>Frontend</h2>

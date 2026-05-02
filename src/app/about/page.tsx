@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { PortfolioLinksRow } from "@/components/PortfolioLinksRow";
 
@@ -8,7 +7,7 @@ export default function Page() {
   return (
     <section className="section">
       <div className="container">
-        <div className="space-between">
+        <div className="profile-hero-layout">
           <div className="animate-fade-in-left" style={{ maxWidth: 760 }}>
             <span className="eyebrow">Professional profile</span>
             <h1 className="h1">About Adam</h1>
@@ -20,17 +19,24 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="photo-cutout photo-cutout-wide animate-fade-in-right">
-            <div className="photo-frame photo-frame-wide photo-frame-curved">
-              <Image
-                src="/adam2.jpg"
-                alt="Portrait of Adam"
-                fill
-                sizes="(max-width: 900px) 100vw, 620px"
-                className="photo-frame-image"
-              />
+          <div className="animate-fade-in-up">
+            <div className="photo-cutout photo-cutout-wide">
+              <div className="photo-frame photo-frame-wide photo-frame-curved">
+                <Image
+                  src="/adam2.jpg"
+                  alt="Portrait of Adam"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 620px"
+                  className="photo-frame-image"
+                />
+              </div>
             </div>
           </div>
+          <aside className="card animate-fade-in-right">
+            <span className="badge">Approach</span>
+            <h2>Outcome-focused engineering</h2>
+            <p className="muted">I turn complex business requirements into reliable products with readable code, strong UX, and maintainable systems.</p>
+          </aside>
         </div>
 
         <div className="grid grid-3 section-tight">

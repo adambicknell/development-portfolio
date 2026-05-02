@@ -4,6 +4,7 @@ import { Providers } from "@/store/Providers";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/data/site";
+import Script from "next/script";
 
 const preferenceBootScript = `
 (() => {
@@ -42,7 +43,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="AB Portfolio" />
       </head>
       <body>
-        <script dangerouslySetInnerHTML={{ __html: preferenceBootScript }} />
+        <Script id="preference-boot" strategy="beforeInteractive">{preferenceBootScript}</Script>
         <Providers>
           <a className="skip-link" href="#main">
             Skip to content
