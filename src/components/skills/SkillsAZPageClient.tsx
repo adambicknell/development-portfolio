@@ -23,13 +23,14 @@ export function SkillsAZPageClient() {
           <div className="animate-fade-in-left">
             <span className="eyebrow">Technical range</span>
             <h1 className="h1">A-Z technical skills index</h1>
-            <p className="lead">Browse every skill alphabetically to quickly find what you need.</p>
+            <p className="lead">
+              A complete A–Z directory of technical skills and core technologies.
+            </p>
           </div>
           <div className="card animate-fade-in-right">
             <strong>Index overview</strong>
             <p className="muted">
-              This page is an easy A–Z scan of the toolkit I use, so you can jump straight to the
-              skills most relevant to you.
+              An alphabetical list of tools and technologies used at a good to expert level.
             </p>
           </div>
         </div>
