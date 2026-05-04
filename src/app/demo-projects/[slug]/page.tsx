@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { projects } from '@/data/projects';
+import { absoluteUrl } from '@/lib/schema';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { Diagram } from '@/components/common/Diagram';
 import { TagList } from '@/components/cards/TagList';
@@ -9,7 +10,15 @@ export function generateStaticParams() { return projects.map(item => ({ slug: it
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const item = projects.find((x) => x.slug === slug);
-  return { title: item?.title ?? 'Demo project', description: item?.summary };
+  if (!item) return { title: 'Demo project' };
+  const path = `/demo-projects/${item.slug}`;
+  return {
+    title: item.title,
+    description: item.summary,
+    alternates: { canonical: path },
+    openGraph: { title: item.title, description: item.summary, url: absoluteUrl(path), type: 'article' },
+    twitter: { card: 'summary_large_image', title: item.title, description: item.summary },
+  };
 }
 export default async function DemoProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

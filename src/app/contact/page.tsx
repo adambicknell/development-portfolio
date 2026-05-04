@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/schema';
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
@@ -11,7 +12,11 @@ import {
   FaStackOverflow,
 } from "react-icons/fa6";
 
-export const metadata = { title: "Contact" };
+export const metadata = pageMetadata({
+  title: 'Contact',
+  description: 'Get in touch with Adam Bicknell about React, TypeScript, Python, APIs, cloud systems, and full stack delivery.',
+  path: '/contact',
+});
 
 export default function Page() {
   return (

@@ -1,4 +1,5 @@
 "use client";
+import { pageMetadata } from '@/lib/schema';
 import { useMemo, useState } from "react";
 import { CaseStudyCard } from "@/components/cards/CaseStudyCard";
 import { caseStudies } from "@/data/caseStudies";
@@ -19,6 +20,12 @@ const MIXED_CARD_PATTERN = [
   "mix-span-3",
   "mix-span-6",
 ] as const;
+
+export const metadata = pageMetadata({
+  title: 'Case Studies',
+  description: 'Anonymised case studies covering delivery of full stack products, platforms, and business systems.',
+  path: '/case-studies',
+});
 
 export default function CaseStudiesPage() {
   const caseStudyViewMode = useAppSelector(

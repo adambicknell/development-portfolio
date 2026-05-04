@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { JsonLd, personSchema } from "@/lib/schema";
+import { JsonLd, personSchema, websiteSchema } from "@/lib/schema";
 import { PortfolioLinksRow } from "@/components/PortfolioLinksRow";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { TagList } from "@/components/cards/TagList";
@@ -45,6 +45,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={personSchema} />
+      <JsonLd data={websiteSchema} />
       <section className="section">
         <div className="container">
           <div className="hero-home-layout page-intro-row">

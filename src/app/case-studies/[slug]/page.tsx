@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { caseStudies } from "@/data/caseStudies";
+import { absoluteUrl } from "@/lib/schema";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { Diagram } from "@/components/common/Diagram";
 import { TagList } from "@/components/cards/TagList";
@@ -29,7 +30,15 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const item = caseStudies.find((x) => x.slug === slug);
-  return { title: item?.title ?? "Case study", description: item?.summary };
+  if (!item) return { title: "Case study" };
+  const path = `/case-studies/${item.slug}`;
+  return {
+    title: item.title,
+    description: item.summary,
+    alternates: { canonical: path },
+    openGraph: { title: item.title, description: item.summary, url: absoluteUrl(path), type: "article" },
+    twitter: { card: "summary_large_image", title: item.title, description: item.summary },
+  };
 }
 
 export default async function CaseStudyPage({

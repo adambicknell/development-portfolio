@@ -1,7 +1,11 @@
 
 import { PortfolioLinksRow } from '@/components/PortfolioLinksRow';
 
-export const metadata = { title: 'Now' };
+export const metadata = pageMetadata({
+  title: 'Now',
+  description: 'What Adam Bicknell is currently focusing on across development, portfolio work, and learning.',
+  path: '/now',
+});
 
 export default function Page() {
   return (

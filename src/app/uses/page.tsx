@@ -1,7 +1,11 @@
 
 import { PortfolioLinksRow } from '@/components/PortfolioLinksRow';
 
-export const metadata = { title: 'Uses' };
+export const metadata = pageMetadata({
+  title: 'Uses',
+  description: 'Tools, hardware, and software Adam Bicknell uses for development and delivery.',
+  path: '/uses',
+});
 
 export default function Page() {
   return (

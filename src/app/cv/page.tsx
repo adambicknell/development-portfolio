@@ -1,6 +1,10 @@
 import { PortfolioLinksRow } from "@/components/PortfolioLinksRow";
 import Link from "next/link";
-export const metadata = { title: "CV" };
+export const metadata = pageMetadata({
+  title: 'CV',
+  description: "View Adam Bicknell's CV with experience across full stack React development, APIs, cloud systems, and secure platforms.",
+  path: '/cv',
+});
 export default function Page() {
   return (
     <section className="section">
