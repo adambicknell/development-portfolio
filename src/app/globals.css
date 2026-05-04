@@ -118,7 +118,6 @@ button {
   padding: 0;
 }
 
-
 .about-card {
   display: flex;
   flex-direction: column;
@@ -140,8 +139,6 @@ button {
   margin-top: 26px;
 }
 
-
-
 .case-study-mixed-grid {
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 20px;
@@ -160,10 +157,15 @@ button {
   width: 100%;
 }
 
-.case-study-mixed-grid .mix-span-2 { grid-column: span 2; }
-.case-study-mixed-grid .mix-span-3 { grid-column: span 3; }
-.case-study-mixed-grid .mix-span-6 { grid-column: 1 / -1; }
-
+.case-study-mixed-grid .mix-span-2 {
+  grid-column: span 2;
+}
+.case-study-mixed-grid .mix-span-3 {
+  grid-column: span 3;
+}
+.case-study-mixed-grid .mix-span-6 {
+  grid-column: 1 / -1;
+}
 
 .case-study-page .h2 {
   font-size: clamp(1.45rem, 2.1vw, 2rem);
@@ -352,7 +354,6 @@ button {
 .page-intro-row {
   margin-bottom: 36px;
 }
-
 
 .case-studies-hero-layout {
   display: grid;
@@ -696,7 +697,11 @@ button {
 }
 
 .case-study-narrative .card {
-  background: linear-gradient(180deg, var(--surface), color-mix(in srgb, var(--soft) 40%, var(--surface)));
+  background: linear-gradient(
+    180deg,
+    var(--surface),
+    color-mix(in srgb, var(--soft) 40%, var(--surface))
+  );
 }
 .preview-panel {
   min-height: 190px;
