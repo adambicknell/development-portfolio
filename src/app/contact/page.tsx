@@ -22,14 +22,10 @@ export default function Page() {
             <span className="eyebrow">Get in touch</span>
             <h1 className="h1">Contact</h1>
             <p className="lead">
-              If you want to connect about my portfolio, technical work,
-              freelance projects, you can contact me directly by email or
-              through LinkedIn.
+              If you want to discuss my portfolio, technical collaboration, or freelance client delivery, contact me directly by email or through LinkedIn.
             </p>
             <p className="lead">
-              I’m open to conversations around full stack React apps, React plus
-              Python systems, internal tools, SaaS platforms, cloud based
-              applications and practical business software.
+              I focus on practical full stack delivery across React, TypeScript, Python, internal tools, SaaS platforms, cloud systems and secure business software.
             </p>
           </div>
 
@@ -97,11 +93,10 @@ export default function Page() {
 
           <Link className="card" href="/cv/adam-bicknell-cv.pdf">
             <h2>
-              <FaRegFileLines aria-hidden="true" /> CV
+              <FaRegFileLines aria-hidden="true" /> Download CV
             </h2>
             <p className="muted">
-              View my CV for a concise summary of experience, skills, and
-              project delivery across roles.
+              Download CV for a concise summary of experience, skills, and project delivery across roles.
             </p>
           </Link>
         </div>

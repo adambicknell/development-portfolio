@@ -914,15 +914,15 @@ html[data-reduced-motion="true"] .card {
 }
 
 .made-with {
-  margin-top: 100px;
-  padding: 20px;
+  margin-top: 40px;
+  padding: 8px 20px 20px;
 }
 
 .made-with .eyebrow {
   display: block;
   text-align: center;
   width: 100%;
-  padding-bottom: 25px;
+  margin-bottom: 12px;
 }
 
 .made-with-copy {

@@ -27,7 +27,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Secure Client Document Portal",
     shortTitle: "Document Portal",
     summary:
-      "An anonymised SaaS platform for medical negligence document pagination and AI-assisted case triage.",
+      "An anonymised legal-tech SaaS platform for medical document pagination and AI-assisted triage in secure, regulated case assessment workflows.",
     context:
       "I led engineering delivery on an anonymised secure legal-tech SaaS platform designed for medical negligence document pagination and AI-assisted early case triage. The product started as a Vue application in AWS with Firebase support, then shifted mid-delivery into a tightly governed Azure estate as part of an organisation-wide platform migration.",
     problem:
@@ -228,7 +228,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Multi-region SaaS Platform Features",
     shortTitle: "SaaS Platform",
     summary:
-      "Feature delivery across an anonymised multi-region SaaS platform spanning React, TypeScript, Python, SmartID SSO, PostgreSQL, release governance, and operational support.",
+      "Feature delivery across an anonymised multi-region SaaS platform spanning React, TypeScript, Python, SmartID SSO, PostgreSQL, and release operations.",
     context:
       "This case study reflects work on an anonymised long-running SaaS platform used across the US, Canada, UK, and Ireland. Delivery was fully remote, with engineering, product, and QA collaboration managed through Slack communication, daily standups, and project tracking that started in Trello before consolidating in Jira. The platform had real production load, region-specific release concerns, and a mixed architecture combining newer React screens with established Mako-rendered server-side views.",
     problem:
@@ -238,7 +238,6 @@ export const caseStudies: CaseStudy[] = [
       "I approached delivery as practical platform stewardship: ship incremental value, preserve release safety, and keep system behaviour observable across regions. That meant coordinating schema and model changes in Buildkite pipelines, maintaining compatibility across legacy and modern UI layers, validating identity flows through QA/UAT, and using Sentry-led triage to support stable post-release operations. Team execution was coordinated through remote-first ceremonies and tooling, with daily standups, Slack-based collaboration, Jira planning, and a rotating on-call pattern supported through a dedicated Slack support channel for one week roughly every 5-6 weeks.",
     techStack: [
       "React",
-      "React with TypeScript",
       "TypeScript",
       "JavaScript",
       "Python",
@@ -296,7 +295,6 @@ export const caseStudies: CaseStudy[] = [
     ],
     tags: [
       "React",
-      "React with TypeScript",
       "TypeScript",
       "JavaScript",
       "Python",
@@ -615,7 +613,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Gilston Waste Management Website and Customer Portal",
     shortTitle: "Gilston Website and Portal",
     summary:
-      "A WordPress redesign and secure customer portal project for a waste management provider, covering Figma mockups, custom theme and plugin work, service content, forms, SEO, an interactive service-area map, and protected document and report access.",
+      "A WordPress redesign and secure customer portal for a waste management provider with custom theme work, SEO, mapping, and protected access.",
     context:
       "I led this Bicknell Digital client delivery for Gilston Waste Management. The project moved from early v1 ideas into a clearer v2 scope that combined a full public website redesign with a focused customer portal MVP on a separate subdomain.",
     problem:
@@ -664,7 +662,6 @@ export const caseStudies: CaseStudy[] = [
       "Can control scope and de-risk client delivery by trimming non-essential integrations while keeping technical quality high",
     ],
     tags: [
-      "Bicknell Digital",
       "Client Website",
       "WordPress",
       "PHP",
@@ -743,7 +740,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Solver and Modelling Platform",
     shortTitle: "Solver Platform",
     summary:
-      "A proprietary production-modelling platform combining optimisation solvers, protected desktop delivery, and Azure-backed deployment workflows used by major international engineering and manufacturing organisations.",
+      "A proprietary modelling platform combining optimisation solvers, protected desktop delivery, and Azure-backed deployment workflows for international engineering organisations.",
     context:
       "I worked on a commercial modelling product focused on production-system modelling, throughput/capacity trade studies, and optimisation-driven decision support. Delivery spanned solver-backed Python services, licensing and IP protection, desktop packaging, and customer-specific cloud deployment constraints, with day-to-day delivery through GitLab branches, merge requests, and review workflows.",
     problem:
@@ -804,7 +801,6 @@ export const caseStudies: CaseStudy[] = [
       "GPkit",
       "CVXOPT",
       "MOSEK",
-      "Thales Sentinel SDK",
       "Azure",
       "Terraform",
       "Docker",
@@ -814,6 +810,7 @@ export const caseStudies: CaseStudy[] = [
       "isort",
       "black",
       "Prettier",
+      "Thales Sentinel SDK",
       "Paver/Pavement",
       "Factory patterns",
     ],

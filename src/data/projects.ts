@@ -50,7 +50,7 @@ export const projects: DemoProject[] = [
   {
     slug: 'developer-portfolio-site',
     title: 'Developer Portfolio Site',
-    status: 'In development',
+    status: 'Live',
     summary: 'A public Next.js portfolio built as a small frontend product using TypeScript, Redux Toolkit, persisted preferences, structured content, filtering, search, compare mode, command palette navigation, accessibility, SEO, and schema.',
     problem: 'The portfolio needs to present private commercial experience clearly while also proving current frontend quality through inspectable public code.',
     features: ['Next.js routing','Redux Toolkit state','Persisted preferences','Portfolio focus selector','Case study filters','Command palette','Search','Compare mode','SEO and schema'],

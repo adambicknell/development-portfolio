@@ -2,10 +2,46 @@ import Image from "next/image";
 import Link from "next/link";
 import { JsonLd, personSchema } from "@/lib/schema";
 import { PortfolioLinksRow } from "@/components/PortfolioLinksRow";
+import { SectionHeader } from "@/components/common/SectionHeader";
+import { TagList } from "@/components/cards/TagList";
+import { caseStudies } from "@/data/caseStudies";
 import { FaCss3Alt, FaDatabase, FaNodeJs, FaReact } from "react-icons/fa";
 import { SiApache, SiNextdotjs, SiTypescript } from "react-icons/si";
 
+const featuredCaseStudySlugs = [
+  "secure-client-document-portal",
+  "solver-and-modelling-platform",
+  "multi-region-saas-platform-features",
+  "gilston-waste-management-website-portal",
+] as const;
+
+const featuredTitleOverrides: Record<string, string> = {
+  "gilston-waste-management-website-portal":
+    "Gilston Waste Management Website and Portal",
+};
+
+const featuredCardTags: Partial<Record<string, string[]>> = {
+  "multi-region-saas-platform-features": [
+    "React",
+    "TypeScript",
+    "Python",
+    "PostgreSQL",
+    "SmartID",
+  ],
+  "gilston-waste-management-website-portal": [
+    "WordPress",
+    "Portal",
+    "Leaflet",
+    "SEO",
+    "PHP",
+  ],
+};
+
 export default function HomePage() {
+  const featuredCaseStudies = featuredCaseStudySlugs
+    .map((slug) => caseStudies.find((item) => item.slug === slug))
+    .filter((item): item is (typeof caseStudies)[number] => Boolean(item));
+
   return (
     <>
       <JsonLd data={personSchema} />
@@ -62,6 +98,34 @@ export default function HomePage() {
             </aside>
           </div>
           <PortfolioLinksRow marginTop={26} />
+          <section className="section-tight">
+            <SectionHeader title="Featured case studies">
+              A few examples of the systems, workflows and client projects
+              covered in this portfolio.
+            </SectionHeader>
+            <div className="grid grid-2">
+              {featuredCaseStudies.map((item) => (
+                <article className="card" key={item.slug}>
+                  <h3 className="h3">
+                    {featuredTitleOverrides[item.slug] ?? item.title}
+                  </h3>
+                  <p className="muted">{item.summary}</p>
+                  <TagList
+                    tags={featuredCardTags[item.slug] ?? item.tags}
+                    maxVisible={5}
+                  />
+                  <div className="row" style={{ marginTop: 18 }}>
+                    <Link
+                      className="button primary"
+                      href={`/case-studies/${item.slug}`}
+                    >
+                      Read case study
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
           <section className="made-with" aria-label="Site technology stack">
             <span className="eyebrow">Made with</span>
             <ul className="made-with-grid">

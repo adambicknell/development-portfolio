@@ -13,7 +13,7 @@ export default function Page() {
         </p>
         <div className="row section-tight">
           <a className="button primary" href="/cv/adam-bicknell-cv.pdf">
-            Download CV PDF
+            Download CV
           </a>
           <Link className="button" href="/experience">
             View experience

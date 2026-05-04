@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { TagList } from "@/components/cards/TagList";
 import { skillsPageIntro, skillsPageSections } from "@/data/skillsPage";
 
@@ -12,7 +13,10 @@ const sectionAnchor = (title: string) =>
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-");
 
+const VISIBLE_TAG_COUNT = 10;
+
 export function SkillsPageClient() {
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
   return (
     <section className="section">
       <div className="container">
@@ -55,11 +59,28 @@ export function SkillsPageClient() {
         <div className="grid animate-grid-single">
           {skillsPageSections.map((section) => {
             const anchor = sectionAnchor(section.title);
+            const isExpanded = expandedSections[section.title] ?? false;
+            const hasOverflow = section.skills.length > VISIBLE_TAG_COUNT;
             return (
               <article className="card" id={anchor} key={section.title}>
                 <h2>{section.title}</h2>
                 <p className="muted">{section.description}</p>
-                <TagList tags={section.skills} />
+                <p>{section.context}</p>
+                <TagList
+                  tags={section.skills}
+                  maxVisible={isExpanded ? section.skills.length : VISIBLE_TAG_COUNT}
+                  groupLabel={`${section.title} skills`}
+                />
+                {hasOverflow ? (
+                  <button
+                    type="button"
+                    className="button"
+                    aria-expanded={isExpanded}
+                    onClick={() => setExpandedSections((current) => ({ ...current, [section.title]: !isExpanded }))}
+                  >
+                    {isExpanded ? "Hide tags" : "Show all tags"}
+                  </button>
+                ) : null}
               </article>
             );
           })}

@@ -7,7 +7,7 @@ export function ProjectCard({ item, compact = false }: { item: DemoProject; comp
       <span className="badge">{item.status}</span>
       <h3 className="h3">{item.title}</h3>
       <p className="muted">{item.summary}</p>
-      <TagList tags={compact ? item.tags.slice(0, 5) : item.tags} />
+      <TagList tags={item.tags} />
       <div className="row" style={{ marginTop: 18 }}>
         <Link className="button primary" href={'/demo-projects/' + item.slug}>Project notes</Link>
         {item.liveUrl && <a className="button" href={item.liveUrl}>Live demo</a>}

@@ -56,8 +56,8 @@ export function ExperiencePageClient() {
               CI/CD, databases, auth, and production support.
             </p>
             <p>
-              <Link className="text-link" href="/cv">
-                Download my CV (PDF)
+              <Link className="text-link" href="/cv/adam-bicknell-cv.pdf">
+                Download CV
               </Link>
             </p>
           </div>

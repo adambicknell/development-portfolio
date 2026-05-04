@@ -3,6 +3,7 @@ import type { ParentFilter } from "@/data/taxonomy";
 export type SkillsPageSection = {
   title: ParentFilter;
   description: string;
+  context: string;
   skills: string[];
 };
 
@@ -19,6 +20,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "Full Stack Delivery",
     description:
       "End-to-end delivery across UI, backend, data, cloud, deployment, support and handover.",
+    context: "Used in secure portals, internal tooling, and production business workflows.",
     skills: [
       "Full stack development",
       "End-to-end delivery",
@@ -46,6 +48,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "React & Frontend",
     description:
       "Interfaces for business workflows: dashboards, portals, forms, admin tools, document views, data-heavy screens and mixed legacy systems.",
+    context: "Applied across user-facing products, admin interfaces, and legacy modernisation work.",
     skills: [
       "React",
       "TypeScript",
@@ -76,6 +79,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "Backend & APIs",
     description:
       "Backend services, API integrations, business logic, serverless functions, document workflows and system-to-system communication.",
+    context: "Used for platform APIs, integration layers, and secure workflow automation.",
     skills: [
       "Python",
       "Flask",
@@ -107,6 +111,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "Cloud & Infrastructure",
     description:
       "Cloud platforms, hosting environments, infrastructure as code, DNS, networking, web servers, SSL and traditional web platform delivery.",
+    context: "Used for deployment, hosting reliability, and production operations support.",
     skills: [
       "Azure",
       "AWS",
@@ -152,6 +157,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "SaaS & Platform",
     description:
       "Commercial platforms, multi-region systems, multi-tenant architecture, customer-managed deployments, release governance and platform reliability.",
+    context: "Used in long-lived platforms with regional rollout and tenant-aware delivery.",
     skills: [
       "SaaS",
       "Platform engineering",
@@ -184,6 +190,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "Internal Tools & Workflows",
     description:
       "Internal systems, admin portals, document workflows, reporting tools, automation, permissions and workflow software for real business processes.",
+    context: "Used by operational teams for intake, processing, reporting, and support.",
     skills: [
       "Internal tools",
       "Internal systems",
@@ -219,6 +226,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "Data, Search & Datastores",
     description:
       "Relational and document databases, migrations, reporting, search, model data, performance tuning and data-heavy workflows.",
+    context: "Used for reporting, search-backed features, and high-volume operational data.",
     skills: [
       "PostgreSQL",
       "MySQL",
@@ -254,6 +262,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "Security & Identity",
     description:
       "Secure access, identity flows, SSO, permissions, sensitive document workflows, certificate handling, private cloud access and platform hardening.",
+    context: "Used to protect sensitive systems and keep access controls auditable.",
     skills: [
       "Authentication",
       "Authorisation",
@@ -292,6 +301,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "DevOps, Testing & Delivery",
     description:
       "CI/CD, release processes, test coverage, QA, UAT, code quality, deployment checks, build tooling and delivery discipline.",
+    context: "Used in production delivery and day-to-day engineering workflows.",
     skills: [
       "CI/CD",
       "Azure DevOps",
@@ -333,6 +343,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "Generative AI & Automation",
     description:
       "Practical use of generative AI tools, local/private AI workflows, retrieval workflows, summarisation, media generation and AI features integrated into systems.",
+    context: "Used in production delivery and day-to-day engineering workflows.",
     skills: [
       "Generative AI",
       "LLMs",
@@ -371,6 +382,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "Modelling & Numerical Systems",
     description:
       "Solver platforms, engineering models, model translation, numerical algorithms, model validation, complex data flows and ML model integration.",
+    context: "Used in production delivery and day-to-day engineering workflows.",
     skills: [
       "Solver platforms",
       "Modelling platforms",
@@ -405,6 +417,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "Desktop & Client Apps",
     description:
       "Desktop clients, installed runtimes, local app integration, licensing clients, installers and desktop-to-cloud workflows.",
+    context: "Used in production delivery and day-to-day engineering workflows.",
     skills: [
       "Electron",
       "Electron desktop client",
@@ -436,6 +449,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "CMS & Legacy Web",
     description:
       "WordPress, Magento, PHP stacks, agency delivery, hosting control panels, migrations, server-rendered pages and older systems that still matter in real businesses.",
+    context: "Used in production delivery and day-to-day engineering workflows.",
     skills: [
       "WordPress",
       "WordPress plugins",
@@ -482,6 +496,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "Operations, Infrastructure & Production Support",
     description:
       "Monitoring, incidents, server management, patching, backups, email, support workflows, disaster recovery and operational reliability.",
+    context: "Used in production delivery and day-to-day engineering workflows.",
     skills: [
       "Production support",
       "Application support",
@@ -532,6 +547,7 @@ export const skillsPageSections: SkillsPageSection[] = [
     title: "Project Leadership & Delivery",
     description:
       "Technical leadership, stakeholder communication, Agile delivery, documentation, handover, QA coordination, release planning and practical engineering judgement.",
+    context: "Used in production delivery and day-to-day engineering workflows.",
     skills: [
       "Technical leadership",
       "Project lead",

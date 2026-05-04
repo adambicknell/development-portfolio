@@ -9,7 +9,7 @@ export function CaseStudyCard({ item, compact = false }: { item: CaseStudy; comp
       <p className="muted">{item.summary}</p>
       {!compact && <p><strong>What it shows</strong></p>}
       <p className="muted">{item.role}</p>
-      <TagList tags={item.tags} maxVisible={compact ? 5 : 6} />
+      <TagList tags={item.tags} />
       <div className="row" style={{ marginTop: 18 }}><Link className="button primary" href={'/case-studies/' + item.slug}>Read case study</Link></div>
     </article>
   );

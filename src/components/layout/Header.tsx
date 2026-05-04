@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import { navItems, site } from "@/data/site";
@@ -16,12 +17,13 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link href="/" className="logo">
-          <img
+          <Image
             className="logo-avatar"
             src="/adam.jpg"
             alt="Adam Bicknell profile photo"
             width={44}
             height={44}
+            priority
           />
           <span>
             {site.name}

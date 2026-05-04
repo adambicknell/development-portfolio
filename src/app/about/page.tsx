@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { TagList } from "@/components/cards/TagList";
 import { PortfolioLinksRow } from "@/components/PortfolioLinksRow";
 
 export const metadata = {
@@ -15,7 +16,7 @@ type AboutCard = {
   link?: { href: string; label: string };
 };
 
-const favouriteTechnologies = [
+const coreTools = [
   "React",
   "TypeScript",
   "Python",
@@ -31,33 +32,27 @@ const favouriteTechnologies = [
   "WordPress",
 ];
 
-const nowItems = [
-  { status: "Done", title: "Portfolio site" },
-  { status: "In development", title: "Client Document Portal Demo" },
-  { status: "In development", title: "Support Triage Dashboard" },
+const currentFocusItems = [
+  {
+    status: "Live",
+    title: "Portfolio site",
+    copy: "A content-driven portfolio for case studies, experience, skills and public demos.",
+  },
+  {
+    status: "In development",
+    title: "Client Document Portal Demo",
+    copy: "A public demo based on the kind of secure document workflows I have built commercially.",
+  },
+  {
+    status: "In development",
+    title: "Support Triage Dashboard",
+    copy: "A practical internal tools demo focused on issue handling, workflow visibility and useful admin views.",
+  },
 ];
 
-const cardSections: AboutCard[][] = [
-  [
-    {
-      title: "What I build",
-      copy: "I build portals, dashboards, APIs, automation tools, secure internal systems, client document workflows, SaaS features, data-heavy interfaces, modelling tools and cloud based applications.",
-      chips: [
-        "Portals",
-        "Dashboards",
-        "REST APIs",
-        "Internal tools",
-        "SaaS",
-        "Data systems",
-      ],
-    },
-    {
-      title: "Why case studies",
-      copy: "Most of my best work is private, internal, client-facing or under NDA. The case studies explain the problem, my role, the system shape, the key decisions, the outcome and what I would improve next without exposing confidential details.",
-      link: { href: "/case-studies", label: "View case studies" },
-    },
-    {
-      title: "Frontend range",
+const technicalRangeCards: AboutCard[] = [
+  {
+    title: "Frontend range",
       copy: "React and TypeScript are the focus of this portfolio, but my frontend experience also includes Redux, Vue, vanilla JavaScript, jQuery, server-rendered views, Mako templates, Electron interfaces and older legacy screens that still support real business workflows.",
       chips: [
         "React",
@@ -69,10 +64,8 @@ const cardSections: AboutCard[][] = [
         "Mako",
       ],
     },
-  ],
-  [
-    {
-      title: "Backend and API work",
+  {
+    title: "Backend and API work",
       copy: "I have worked across Python, Flask, FastAPI, PHP, Laravel, Lumen, CakePHP, Node.js, REST APIs, SOAP services, authentication flows, document access APIs, business rules and integrations between internal and external systems.",
       chips: [
         "Python",
@@ -84,8 +77,8 @@ const cardSections: AboutCard[][] = [
         "Node.js",
       ],
     },
-    {
-      title: "Cloud and delivery",
+  {
+    title: "Cloud and delivery",
       copy: "I have delivered and supported systems across Azure, AWS, Terraform, Docker, Azure Container Apps, Azure Functions, Azure DevOps, Buildkite, GitHub, GitLab, CI/CD pipelines, hosted web platforms and customer-managed deployments.",
       chips: [
         "Azure",
@@ -97,16 +90,42 @@ const cardSections: AboutCard[][] = [
         "Buildkite",
       ],
     },
-  ],
-  [
-    {
-      title: "Business systems mindset",
+  {
+    title: "Security and identity",
+    copy: "I have worked with authentication, authorisation, SSO, SAML, OAuth2, Azure Active Directory, Microsoft Entra ID, SmartID, role-based permissions, secure document access, SOAP authentication, secrets management and penetration test remediation.",
+    chips: [
+      "SSO",
+      "SAML",
+      "OAuth2",
+      "Azure Active Directory",
+      "SmartID",
+      "Role-based access",
+      "Security",
+    ],
+  },
+  {
+    title: "Data, search and modelling",
+    copy: "I have worked with PostgreSQL, MySQL, MariaDB, Microsoft SQL Server, MongoDB, Cosmos DB, SQLAlchemy, Elasticsearch, Azure Search, reporting workflows, data validation, model inputs, model outputs, currency conversion logic and numerical modelling systems.",
+    chips: [
+      "PostgreSQL",
+      "MySQL",
+      "SQLAlchemy",
+      "Elasticsearch",
+      "Cosmos DB",
+      "Modelling",
+      "Reporting",
+    ],
+  },
+];
+
+const businessPlatformCards: AboutCard[] = [
+  {
+    title: "Business systems mindset",
       copy: "A lot of my work sits inside real business operations rather than isolated product demos. I have worked on legal document workflows, casting platform features, solver and modelling tools, reporting systems, client portals, internal dashboards, workflow automation and support tooling.",
       link: { href: "/experience", label: "Explore my experience" },
     },
-
-    {
-      title: "Industry and platform experience",
+  {
+    title: "Commercial domains",
       copy: "I have worked across legal technology, HR and workforce-related systems, music technology, film, TV and casting platforms, manufacturing and modelling software, agency websites, client portals and internal business systems. That range has given me experience with different users, workflows, data needs, security concerns and release environments.",
       chips: [
         "Legal tech",
@@ -119,36 +138,8 @@ const cardSections: AboutCard[][] = [
         "Internal systems",
       ],
     },
-  ],
-  [
-    {
-      title: "Security and identity",
-      copy: "I have worked with authentication, authorisation, SSO, SAML, OAuth2, Azure Active Directory, Microsoft Entra ID, SmartID, role-based permissions, secure document access, SOAP authentication, secrets management and penetration test remediation.",
-      chips: [
-        "SSO",
-        "SAML",
-        "OAuth2",
-        "Azure Active Directory",
-        "SmartID",
-        "Role-based access",
-        "Security",
-      ],
-    },
-    {
-      title: "Data, search and modelling",
-      copy: "I have worked with PostgreSQL, MySQL, MariaDB, Microsoft SQL Server, MongoDB, Cosmos DB, SQLAlchemy, Elasticsearch, Azure Search, reporting workflows, data validation, model inputs, model outputs, currency conversion logic and numerical modelling systems.",
-      chips: [
-        "PostgreSQL",
-        "MySQL",
-        "SQLAlchemy",
-        "Elasticsearch",
-        "Cosmos DB",
-        "Modelling",
-        "Reporting",
-      ],
-    },
-    {
-      title: "Production and support experience",
+  {
+    title: "Production and support experience",
       copy: "My early career in application support and infrastructure support still shapes how I build software. I think about monitoring, release risk, backups, incidents, user support, documentation, handover, permissions, server behaviour and what happens when a system is live.",
       chips: [
         "Production support",
@@ -159,10 +150,8 @@ const cardSections: AboutCard[][] = [
         "Infrastructure support",
       ],
     },
-  ],
-  [
-    {
-      title: "SaaS and platform work",
+  {
+    title: "SaaS and platform work",
       copy: "I have worked on multi-region SaaS platforms, multi-tenant systems, secure Azure SaaS products, customer-managed deployments, commercial platforms, release governance, regional UAT, production support and platform modernisation.",
       chips: [
         "SaaS",
@@ -173,23 +162,8 @@ const cardSections: AboutCard[][] = [
         "Release governance",
       ],
     },
-    {
-      title: "Generative AI and automation",
-      copy: "I use generative AI and automation in a practical way: summarisation, research support, local LLM workflows, prompt workflows, content processing, RAG concepts, embeddings, human review and AI features that can support real business processes.",
-      chips: [
-        "Generative AI",
-        "LLMs",
-        "Ollama",
-        "RAG",
-        "Embeddings",
-        "Document summarisation",
-        "Automation",
-      ],
-    },
-  ],
-  [
-    {
-      title: "Freelance and client work",
+  {
+    title: "Freelance and client work",
       copy: "Alongside employed roles, I have also delivered freelance and client work through Bicknell Digital. That work adds another layer to my experience with client communication, hosting, WordPress, website support, handover, small business workflows and practical delivery.",
       chips: [
         "Bicknell Digital",
@@ -200,19 +174,6 @@ const cardSections: AboutCard[][] = [
         "Support",
       ],
     },
-    {
-      title: "How I work",
-      copy: "I care about understanding the problem, choosing practical technical options, reviewing the trade-offs, communicating clearly, testing the risky parts and leaving systems easier to support than I found them.",
-      chips: [
-        "Technical judgement",
-        "Communication",
-        "Testing",
-        "Refactoring",
-        "Documentation",
-        "Ownership",
-      ],
-    },
-  ],
 ];
 
 export default function Page() {
@@ -224,37 +185,16 @@ export default function Page() {
             <span className="eyebrow">Professional profile</span>
             <h1 className="h1">About Adam</h1>
             <p className="lead">
-              I’m a UK based Full Stack React Developer with experience across
-              React, TypeScript, Python, PHP, APIs, cloud systems,
-              authentication, databases, CI/CD and secure business applications.
+              I’m a UK based Full Stack React Developer delivering business software across React, TypeScript, Python, APIs, cloud systems, data, and security.
             </p>
             <p>
-              I build practical full stack software for real business workflows.
-              That usually means portals, dashboards, APIs, automation tools,
-              data systems, modelling platforms, secure internal systems, SaaS
-              features and cloud based applications.
+              I build and support production systems used by real teams. That includes portals, dashboards, APIs, automation tools, modelling workflows, and secure internal platforms.
             </p>
             <p>
-              Most of my commercial work has been private company software,
-              client-facing systems or work delivered under NDA. This portfolio
-              explains that work through anonymised case studies, selected
-              public demos and a fuller breakdown of the systems, decisions and
-              trade-offs behind them.
+              Most commercial work I have delivered is private or covered by NDA, so this site uses anonymised case studies, selected public demos, and freelance client delivery through Bicknell Digital.
             </p>
             <p>
-              My background is broader than a single frontend stack. I have
-              worked across React and TypeScript interfaces, Python services,
-              PHP systems, identity and SSO, SQL and document databases, Azure
-              and AWS infrastructure, CI/CD pipelines, production support,
-              legacy modernisation and internal tools used by real teams.
-            </p>
-            <p>
-              That mix is why I am strongest where frontend, backend, data,
-              cloud and business process meet. I am comfortable working through
-              the messy middle of a system: unclear requirements, old code,
-              permissions, data flows, release risk, support issues, user
-              workflows and the decisions needed to make software useful in
-              production.
+              I work comfortably across frontend, backend, cloud, and data. I focus on clear delivery in messy real-world contexts, including legacy code, release risk, permissions, support needs, and operational handover.
             </p>
 
             <p className="muted">
@@ -279,7 +219,7 @@ export default function Page() {
               </div>
             </div>
             <aside className="card about-card" style={{ marginTop: 18 }}>
-              <h2>What I do</h2>
+              <h2>What I build</h2>
               <p className="muted">
                 I work across full stack React, TypeScript, Python, APIs,
                 internal tools, SaaS platforms and business systems, with wider
@@ -288,51 +228,74 @@ export default function Page() {
                 production support.
               </p>
               <p className="muted">
-                For a more detailed breakdown of the technologies and practices
-                behind this work, see the{" "}
+                For a more detailed breakdown of the technologies behind this work,
+                see the{" "}
                 <Link className="text-link" href="/skills">
                   Skills page
                 </Link>
                 .
               </p>
 
-              <div className="row">
-                {[
+              <TagList
+                tags={[
                   "React",
                   "TypeScript",
                   "Python",
                   "APIs",
                   "Cloud",
                   "Business systems",
-                ].map((chip) => (
-                  <span className="tag" key={chip}>
-                    {chip}
-                  </span>
-                ))}
-              </div>
+                ]}
+              />
             </aside>
           </div>
         </div>
 
         <div className="about-card-sections">
-          {cardSections.map((section, sectionIndex) => (
-            <div
-              className={`grid ${section.length === 1 ? "" : section.length === 2 ? "grid-2" : "grid-3"} about-card-grid`}
-              key={sectionIndex}
-            >
-              {section.map((card) => (
-                <article className="card about-card" key={card.title}>
-                  <h2>{card.title}</h2>
+          <div className="grid grid-2 about-card-grid">
+            <article className="card about-card">
+              <h2>Why case studies</h2>
+              <p className="muted">
+                Most of my best work is private, internal, client-facing or under NDA. The case studies explain the problem, my role, the system shape, the key decisions, the outcome and what I would improve next without exposing confidential details.
+              </p>
+              <p>
+                <Link className="text-link" href="/case-studies">
+                  Case Studies
+                </Link>
+              </p>
+            </article>
+            <article className="card about-card">
+              <h2>AI and automation</h2>
+              <p className="muted">
+                I use generative AI and automation in practical ways: research support, summarisation, content processing, local LLM workflows, prompt workflows, document workflows and business process support.
+              </p>
+              <p className="muted">
+                I use these tools to move faster, but I review, test and understand what goes into production.
+              </p>
+              <TagList tags={["Generative AI", "LLMs", "Ollama", "Document summarisation", "Automation", "Prompt workflows"]} />
+            </article>
+          </div>
+
+          <article className="card about-card section-tight">
+            <h2>Technical range</h2>
+            <div className="grid grid-2 about-card-grid">
+              {technicalRangeCards.map((card) => (
+                <div className="card-soft" key={card.title}>
+                  <h3>{card.title}</h3>
                   <p className="muted">{card.copy}</p>
-                  {card.chips?.length ? (
-                    <div className="row">
-                      {card.chips.map((chip) => (
-                        <span className="tag" key={chip}>
-                          {chip}
-                        </span>
-                      ))}
-                    </div>
-                  ) : null}
+                  {card.chips?.length ? <TagList tags={card.chips} /> : null}
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <article className="card about-card section-tight">
+            <h2>Business and platform experience</h2>
+            <div className="grid grid-2 about-card-grid">
+              {businessPlatformCards.map((card) => (
+                <div className="card-soft" key={card.title}>
+                  <h3>{card.title}</h3>
+                  <p className="muted">{card.copy}</p>
+                  {card.chips?.length ? <TagList tags={card.chips} /> : null}
                   {card.link ? (
                     <p>
                       <Link className="text-link" href={card.link.href}>
@@ -340,40 +303,45 @@ export default function Page() {
                       </Link>
                     </p>
                   ) : null}
-                </article>
+                </div>
               ))}
             </div>
-          ))}
+          </article>
+
+          <article className="card about-card">
+            <h2>How I work</h2>
+            <p className="muted">
+              I care about understanding the problem, choosing practical technical options, reviewing the trade-offs, communicating clearly, testing the risky parts and leaving systems easier to support than I found them.
+            </p>
+            <p className="muted">
+              I think about what happens after release: permissions, monitoring, handover, support, data quality and whether the system still makes sense when real users rely on it.
+            </p>
+            <TagList tags={["Technical judgement", "Communication", "Testing", "Refactoring", "Documentation", "Ownership"]} />
+          </article>
         </div>
 
         <div className="about-full-width-cards">
           <div className="card section-tight about-card">
-            <h2>Favourite technologies</h2>
+            <h2>Core tools</h2>
             <p className="muted">
-              These are the technologies I reach for most often in day-to-day
-              delivery across product engineering, internal tools and secure
-              business systems.
+              These are the tools I use most often across product engineering,
+              internal systems, client work and secure business software.
             </p>
-            <div className="row">
-              {favouriteTechnologies.map((tech) => (
-                <span className="tag" key={tech}>
-                  {tech}
-                </span>
-              ))}
-            </div>
+            <TagList tags={coreTools} maxVisible={coreTools.length} />
           </div>
 
           <div className="card section-tight about-card">
-            <h2>What I am working on now</h2>
+            <h2>Current focus</h2>
             <p className="muted">
-              I am focused on practical demos, clear documentation and
-              architecture decisions that are easy to inspect.
+              I am currently focused on keeping this portfolio clear, improving the
+              public demos and documenting the decisions behind each project.
             </p>
             <div className="grid grid-3">
-              {nowItems.map((item) => (
+              {currentFocusItems.map((item) => (
                 <div className="card-soft" key={item.title}>
                   <span className="badge">{item.status}</span>
                   <h3>{item.title}</h3>
+                  <p className="muted">{item.copy}</p>
                 </div>
               ))}
             </div>
@@ -382,12 +350,12 @@ export default function Page() {
           <div className="card section-tight about-card">
             <h2>Where this portfolio fits</h2>
             <p className="muted">
-              This portfolio brings together work delivered through Bicknell
-              Digital alongside selected examples from private company systems,
-              including public demos, anonymised case studies, a detailed
-              experience timeline and a technical skills index. It is designed
-              to clearly show the kinds of systems I have built, supported and
-              improved.
+              This portfolio brings together selected commercial experience,
+              Bicknell Digital client work, anonymised case studies, public
+              demos, a detailed experience timeline and a technical skills
+              index. It is designed to show the kinds of systems I have built,
+              supported and improved without exposing private company or client
+              details.
             </p>
             <div className="row">
               <Link className="text-link" href="/experience">

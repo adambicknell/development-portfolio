@@ -56,7 +56,7 @@ export function Footer() {
                 className="footer-icon-link"
               >
                 <CvIcon aria-hidden="true" />
-                <span>CV</span>
+                <span>Download CV</span>
               </Link>
             );
           })()}
