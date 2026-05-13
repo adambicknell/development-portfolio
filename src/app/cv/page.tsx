@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/schema';
 import { PortfolioLinksRow } from "@/components/PortfolioLinksRow";
 import Link from "next/link";
 export const metadata = pageMetadata({

@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/schema';
 import { ExperiencePageClient } from '@/components/experience/ExperiencePageClient';
 
 export const metadata = pageMetadata({

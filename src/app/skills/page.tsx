@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/schema';
 import { SkillsPageClient } from '@/components/skills/SkillsPageClient';
 
 export const metadata = pageMetadata({

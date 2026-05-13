@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/schema';
 import Link from 'next/link';
 export const metadata = pageMetadata({
   title: 'Privacy',

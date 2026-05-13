@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/schema';
 import { SkillsAZPageClient } from '@/components/skills/SkillsAZPageClient';
 
 export const metadata = pageMetadata({

@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/schema';
 import { DemoProjectsPageClient } from '@/components/demo-projects/DemoProjectsPageClient';
 
 export const metadata = pageMetadata({
